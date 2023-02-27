@@ -1,0 +1,11 @@
+simRootFileName=./simulationOutput.root
+outRecoRootFileName=./recoOutput.root
+outAnalysisRootFileName=./analysisOutput.root
+runningWindowSize=0.005000
+runningWPercentStep=0.100000
+minVertNumber=1
+limitPercMaxNumVert=1.00000
+sigmasNumber=3
+minMult=3
+maxMult=52
+enableDeltaPhiMaxCalculation=1

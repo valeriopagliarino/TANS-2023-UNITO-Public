@@ -1,0 +1,715 @@
+Sampling process 5918 for 3 seconds with 1 millisecond of run time between samples
+Sampling completed, processing symbols...
+Analysis of sampling root.exe (pid 5918) every 1 millisecond
+Process:         root.exe [5918]
+Path:            /Users/USER/*/root.exe
+Load Address:    0x100040000
+Identifier:      root.exe
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  root [5917]
+
+Date/Time:       2023-01-18 16:53:10.203 +0100
+Launch Time:     2023-01-18 16:52:58.801 +0100
+OS Version:      macOS 12.5.1 (21G83)
+Report Version:  7
+Analysis Tool:   /usr/bin/sample
+
+Physical footprint:         218.8M
+Physical footprint (peak):  229.7M
+----
+
+Call graph:
+    2059 Thread_97922   DispatchQueue_1: com.apple.main-thread  (serial)
+      2059 start  (in dyld) + 520  [0x10030508c]
+        2059 main  (in root.exe) + 96  [0x100043de0]
+          2059 TRint::Run(bool)  (in libRint.6.26.06.so) + 1028  [0x1001855ac]
+            2059 TRint::ProcessLineNr(char const*, char const*, int*)  (in libRint.6.26.06.so) + 152  [0x1001858f4]
+              2059 TApplication::ExecuteFile(char const*, int*, bool)  (in libCore.6.26.06.so) + 1724  [0x100820b94]
+                2059 TCling::ProcessLineSynch(char const*, TInterpreter::EErrorCode*)  (in libCling.6.26.06.so) + 172  [0x1042ddca4]
+                  2059 TCling::ProcessLine(char const*, TInterpreter::EErrorCode*)  (in libCling.6.26.06.so) + 2432  [0x1042db8e0]
+                    2059 HandleInterpreterException(cling::MetaProcessor*, char const*, cling::Interpreter::CompilationResult&, cling::Value*)  (in libCling.6.26.06.so) + 84  [0x1042dbf40]
+                      2059 cling::MetaProcessor::process(llvm::StringRef, cling::Interpreter::CompilationResult&, cling::Value*, bool)  (in libCling.6.26.06.so) + 196  [0x10444dad8]
+                        2059 cling::MetaParser::isCommand(cling::MetaSema::ActionResult&, cling::Value*)  (in libCling.6.26.06.so) + 108  [0x104446c8c]
+                          2059 cling::MetaParser::isXCommand(cling::MetaSema::ActionResult&, cling::Value*)  (in libCling.6.26.06.so) + 2656  [0x104447d6c]
+                            2059 cling::MetaSema::actOnxCommand(llvm::StringRef, llvm::StringRef, cling::Value*)  (in libCling.6.26.06.so) + 1000  [0x104450ec8]
+                              2059 cling::Interpreter::EvaluateInternal(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, cling::CompilationOptions, cling::Value*, cling::Transaction**, unsigned long)  (in libCling.6.26.06.so) + 220  [0x104410144]
+                                2059 cling::Interpreter::RunFunction(clang::FunctionDecl const*, cling::Value*)  (in libCling.6.26.06.so) + 192  [0x1044119f8]
+                                  2059 cling::IncrementalExecutor::executeWrapper(llvm::StringRef, cling::Value*) const  (in libCling.6.26.06.so) + 148  [0x1043fc730]
+                                    2059 ???  (in <unknown binary>)  [0x1002fc084]
+                                      2059 ???  (in <unknown binary>)  [0x1002f9394]
+                                        2059 TROOT::ProcessLine(char const*, int*)  (in libCore.6.26.06.so) + 128  [0x10081551c]
+                                          2059 TCling::ProcessLine(char const*, TInterpreter::EErrorCode*)  (in libCling.6.26.06.so) + 3036  [0x1042dbb3c]
+                                            2059 HandleInterpreterException(cling::MetaProcessor*, char const*, cling::Interpreter::CompilationResult&, cling::Value*)  (in libCling.6.26.06.so) + 84  [0x1042dbf40]
+                                              2059 cling::MetaProcessor::process(llvm::StringRef, cling::Interpreter::CompilationResult&, cling::Value*, bool)  (in libCling.6.26.06.so) + 304  [0x10444db44]
+                                                2059 cling::Interpreter::process(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, cling::Value*, cling::Transaction**, bool)  (in libCling.6.26.06.so) + 328  [0x10440fa50]
+                                                  2059 cling::Interpreter::EvaluateInternal(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, cling::CompilationOptions, cling::Value*, cling::Transaction**, unsigned long)  (in libCling.6.26.06.so) + 220  [0x104410144]
+                                                    2059 cling::Interpreter::RunFunction(clang::FunctionDecl const*, cling::Value*)  (in libCling.6.26.06.so) + 192  [0x1044119f8]
+                                                      2059 cling::IncrementalExecutor::executeWrapper(llvm::StringRef, cling::Value*) const  (in libCling.6.26.06.so) + 148  [0x1043fc730]
+                                                        2059 ???  (in <unknown binary>)  [0x104214084]
+                                                          2059 Cli::Start(TString, TString)  (in Cli.so) + 76  [0x113504adc]
+                                                            2059 Cli::Simulation(TString)  (in Cli.so) + 416  [0x113504d14]
+                                                              2059 RunManager::BeamOn()  (in RunManager.so) + 64  [0x1137bfefc]
+                                                                1491 RunManager::SimulationBackend()  (in RunManager.so) + 168  [0x1137c0024]
+                                                                + 1491 TObject::Write(char const*, int, int) const  (in libCore.6.26.06.so) + 268  [0x10084ef40]
+                                                                +   891 TDirectoryFile::WriteTObject(TObject const*, char const*, char const*, int)  (in libRIO.6.26.06.so) + 760  [0x100d02410]
+                                                                +   ! 805 TKey::WriteFile(int, TFile*)  (in libRIO.6.26.06.so) + 180  [0x100d429d8]
+                                                                +   ! : 798 TFile::WriteBuffer(char const*, int)  (in libRIO.6.26.06.so) + 224  [0x100d132e0]
+                                                                +   ! : | 798 TFile::SysWrite(int, void const*, int)  (in libRIO.6.26.06.so) + 28  [0x100d1c688]
+                                                                +   ! : |   798 write  (in libsystem_kernel.dylib) + 8  [0x18fb9e6f8]
+                                                                +   ! : 6 TFile::WriteBuffer(char const*, int)  (in libRIO.6.26.06.so) + 300  [0x100d1332c]
+                                                                +   ! : | 5 TUnixSystem::IgnoreSignal(ESignals, bool)  (in libCore.6.26.06.so) + 184  [0x100953128]
+                                                                +   ! : | + 5 __platform_sigaction  (in libsystem_platform.dylib) + 108  [0x18fbee798]
+                                                                +   ! : | +   5 __sigaction  (in libsystem_kernel.dylib) + 8  [0x18fba107c]
+                                                                +   ! : | 1 TUnixSystem::IgnoreSignal(ESignals, bool)  (in libCore.6.26.06.so) + 0  [0x100953070]
+                                                                +   ! : 1 TFile::WriteBuffer(char const*, int)  (in libRIO.6.26.06.so) + 196  [0x100d132c4]
+                                                                +   ! :   1 TUnixSystem::IgnoreSignal(ESignals, bool)  (in libCore.6.26.06.so) + 120  [0x1009530e8]
+                                                                +   ! :     1 __platform_sigaction  (in libsystem_platform.dylib) + 108  [0x18fbee798]
+                                                                +   ! :       1 __sigaction  (in libsystem_kernel.dylib) + 8  [0x18fba107c]
+                                                                +   ! 85 TKey::WriteFile(int, TFile*)  (in libRIO.6.26.06.so) + 480  [0x100d42b04]
+                                                                +   ! : 85 TKey::DeleteBuffer()  (in libRIO.6.26.06.so) + 36  [0x100d40440]
+                                                                +   ! :   85 TBufferFile::~TBufferFile()  (in libRIO.6.26.06.so) + 52  [0x100c9fc4c]
+                                                                +   ! :     83 TBuffer::~TBuffer()  (in libCore.6.26.06.so) + 48  [0x100829908]
+                                                                +   ! :     | 74 free_medium  (in libsystem_malloc.dylib) + 644  [0x18f9ee61c]
+                                                                +   ! :     | + 74 mvm_madvise_free  (in libsystem_malloc.dylib) + 96  [0x18f9f08ec]
+                                                                +   ! :     | +   74 madvise  (in libsystem_kernel.dylib) + 8,0  [0x18fb9d70c,0x18fb9d704]
+                                                                +   ! :     | 5 free_medium  (in libsystem_malloc.dylib) + 2624  [0x18f9eedd8]
+                                                                +   ! :     | + 5 mvm_madvise_free  (in libsystem_malloc.dylib) + 96  [0x18f9f08ec]
+                                                                +   ! :     | +   5 madvise  (in libsystem_kernel.dylib) + 8  [0x18fb9d70c]
+                                                                +   ! :     | 3 free_large  (in libsystem_malloc.dylib) + 156  [0x18f9f1f1c]
+                                                                +   ! :     | + 3 madvise  (in libsystem_kernel.dylib) + 8  [0x18fb9d70c]
+                                                                +   ! :     | 1 free_large  (in libsystem_malloc.dylib) + 584  [0x18f9f20c8]
+                                                                +   ! :     |   1 madvise  (in libsystem_kernel.dylib) + 8  [0x18fb9d70c]
+                                                                +   ! :     2 TBufferIO::~TBufferIO()  (in libRIO.6.26.06.so) + 48  [0x100caa214]
+                                                                +   ! :       2 TExMap::~TExMap()  (in libCore.6.26.06.so) + 40  [0x1008bdc90]
+                                                                +   ! :         1 default_zone_free_definite_size  (in libsystem_malloc.dylib) + 24  [0x18f9e7040]
+                                                                +   ! :         1 free_small  (in libsystem_malloc.dylib) + 884  [0x18f9ea0d4]
+                                                                +   ! :           1 small_free_list_add_ptr  (in libsystem_malloc.dylib) + 328  [0x18f9ec580]
+                                                                +   ! 1 TKey::WriteFile(int, TFile*)  (in libRIO.6.26.06.so) + 156  [0x100d429c0]
+                                                                +   !   1 TFile::Seek(long long, TFile::ERelativeTo)  (in libRIO.6.26.06.so) + 140  [0x100d12d44]
+                                                                +   !     1 __lseek  (in libsystem_kernel.dylib) + 8  [0x18fb9c378]
+                                                                +   562 TDirectoryFile::WriteTObject(TObject const*, char const*, char const*, int)  (in libRIO.6.26.06.so) + 688  [0x100d023c8]
+                                                                +   ! 562 TFile::CreateKey(TDirectory*, TObject const*, char const*, int)  (in libRIO.6.26.06.so) + 68  [0x100d0f960]
+                                                                +   !   553 TKey::TKey(TObject const*, char const*, int, TDirectory*)  (in libRIO.6.26.06.so) + 496  [0x100d3f590]
+                                                                +   !   : 553 TBufferFile::WriteClassBuffer(TClass const*, void*)  (in libRIO.6.26.06.so) + 540  [0x100ca7348]
+                                                                +   !   :   553 TBufferFile::ApplySequence(TStreamerInfoActions::TActionSequence const&, void*)  (in libRIO.6.26.06.so) + 120  [0x100ca74c0]
+                                                                +   !   :     553 TStreamerInfoActions::GenericWriteAction(TBuffer&, void*, TStreamerInfoActions::TConfiguration const*)  (in libRIO.6.26.06.so) + 72  [0x100d617d8]
+                                                                +   !   :       551 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 4324  [0x100ea1154]
+                                                                +   !   :       | 551 TBufferFile::WriteFastArray(void*, TClass const*, int, TMemberStreamer*)  (in libRIO.6.26.06.so) + 136  [0x100ca4658]
+                                                                +   !   :       |   551 TObjArray::Streamer(TBuffer&)  (in libCore.6.26.06.so) + 328  [0x1008cbb7c]
+                                                                +   !   :       |     551 TBufferIO::WriteObjectAny(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 312  [0x100caae94]
+                                                                +   !   :       |       546 TBufferFile::WriteObjectClass(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 460  [0x100ca50cc]
+                                                                +   !   :       |       + 546 TBranch::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 232  [0x117d219ec]
+                                                                +   !   :       |       +   546 TBufferFile::WriteClassBuffer(TClass const*, void*)  (in libRIO.6.26.06.so) + 540  [0x100ca7348]
+                                                                +   !   :       |       +     546 TBufferFile::ApplySequence(TStreamerInfoActions::TActionSequence const&, void*)  (in libRIO.6.26.06.so) + 120  [0x100ca74c0]
+                                                                +   !   :       |       +       545 TStreamerInfoActions::GenericWriteAction(TBuffer&, void*, TStreamerInfoActions::TConfiguration const*)  (in libRIO.6.26.06.so) + 72  [0x100d617d8]
+                                                                +   !   :       |       +       ! 437 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 4324  [0x100ea1154]
+                                                                +   !   :       |       +       ! : 437 TBufferFile::WriteFastArray(void*, TClass const*, int, TMemberStreamer*)  (in libRIO.6.26.06.so) + 136  [0x100ca4658]
+                                                                +   !   :       |       +       ! :   437 TObjArray::Streamer(TBuffer&)  (in libCore.6.26.06.so) + 328  [0x1008cbb7c]
+                                                                +   !   :       |       +       ! :     431 TBufferIO::WriteObjectAny(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 312  [0x100caae94]
+                                                                +   !   :       |       +       ! :     | 418 TBufferFile::WriteObjectClass(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 460  [0x100ca50cc]
+                                                                +   !   :       |       +       ! :     | + 353 TBufferFile::WriteFastArray(char const*, int)  (in libRIO.6.26.06.so) + 88  [0x100ca3c80]
+                                                                +   !   :       |       +       ! :     | + ! 353 _platform_memmove  (in libsystem_platform.dylib) + 88,104  [0x18fbef128,0x18fbef138]
+                                                                +   !   :       |       +       ! :     | + 48 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 44  [0x117d157b4]
+                                                                +   !   :       |       +       ! :     | + ! 10 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 440  [0x100d426ec]
+                                                                +   !   :       |       +       ! :     | + ! : 8 TBufferFile::WriteUShort(unsigned short)  (in libRIO.6.26.06.so) + 88  [0x100ca8514]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 440  [0x100d426ec]
+                                                                +   !   :       |       +       ! :     | + ! :   2 TBufferFile::WriteUShort(unsigned short)  (in libRIO.6.26.06.so) + 20  [0x100ca84d0]
+                                                                +   !   :       |       +       ! :     | + ! 8 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 84  [0x100d42588]
+                                                                +   !   :       |       +       ! :     | + ! : 8 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 84  [0x100d42588]
+                                                                +   !   :       |       +       ! :     | + ! :   8 TBufferFile::WriteUShort(unsigned short)  (in libRIO.6.26.06.so) + 20,56  [0x100ca84d0,0x100ca84f4]
+                                                                +   !   :       |       +       ! :     | + ! 8 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 592  [0x100d42784]
+                                                                +   !   :       |       +       ! :     | + ! : 4 TBufferFile::WriteFastArray(char const*, int)  (in libRIO.6.26.06.so) + 88  [0x100ca3c80]
+                                                                +   !   :       |       +       ! :     | + ! : | 4 _platform_memmove  (in libsystem_platform.dylib) + 452,12  [0x18fbef294,0x18fbef0dc]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TBufferFile::WriteTString(TString const&)  (in libRIO.6.26.06.so) + 116  [0x100c9ff3c]
+                                                                +   !   :       |       +       ! :     | + ! : | 2 TBufferFile::WriteChar(char)  (in libRIO.6.26.06.so) + 72  [0x100ca84b4]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 592  [0x100d42784]
+                                                                +   !   :       |       +       ! :     | + ! :   2 TBufferFile::WriteFastArray(char const*, int)  (in libRIO.6.26.06.so) + 40,76  [0x100ca3c50,0x100ca3c74]
+                                                                +   !   :       |       +       ! :     | + ! 6 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 60  [0x100d42570]
+                                                                +   !   :       |       +       ! :     | + ! : 3 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 60  [0x100d42570]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 60  [0x100d42570]
+                                                                +   !   :       |       +       ! :     | + ! : | 2 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 20,56  [0x100ca8530,0x100ca8554]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 112  [0x100ca858c]
+                                                                +   !   :       |       +       ! :     | + ! 3 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 420  [0x100d426d8]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TBufferFile::WriteUShort(unsigned short)  (in libRIO.6.26.06.so) + 88  [0x100ca8514]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 420  [0x100d426d8]
+                                                                +   !   :       |       +       ! :     | + ! :   1 TBufferFile::WriteUShort(unsigned short)  (in libRIO.6.26.06.so) + 84  [0x100ca8510]
+                                                                +   !   :       |       +       ! :     | + ! 3 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 604  [0x100d42790]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TBufferFile::WriteFastArray(char const*, int)  (in libRIO.6.26.06.so) + 108  [0x100ca3c94]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 604  [0x100d42790]
+                                                                +   !   :       |       +       ! :     | + ! :   1 TBufferFile::WriteTString(TString const&)  (in libRIO.6.26.06.so) + 28  [0x100c9fee4]
+                                                                +   !   :       |       +       ! :     | + ! 3 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 616  [0x100d4279c]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TBufferFile::WriteTString(TString const&)  (in libRIO.6.26.06.so) + 116  [0x100c9ff3c]
+                                                                +   !   :       |       +       ! :     | + ! : | 1 TBufferFile::WriteChar(char)  (in libRIO.6.26.06.so) + 76  [0x100ca84b8]
+                                                                +   !   :       |       +       ! :     | + ! : | 1 TBufferFile::WriteTString(TString const&)  (in libRIO.6.26.06.so) + 116  [0x100c9ff3c]
+                                                                +   !   :       |       +       ! :     | + ! : |   1 TBufferFile::WriteChar(char)  (in libRIO.6.26.06.so) + 20  [0x100ca8480]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TBufferFile::WriteTString(TString const&)  (in libRIO.6.26.06.so) + 160  [0x100c9ff68]
+                                                                +   !   :       |       +       ! :     | + ! 2 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 500  [0x100d42728]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 500  [0x100d42728]
+                                                                +   !   :       |       +       ! :     | + ! :   2 TBufferFile::WriteULong(unsigned long)  (in libRIO.6.26.06.so) + 104,124  [0x100ca85fc,0x100ca8610]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 44  [0x117d157b4]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 48  [0x100d42564]
+                                                                +   !   :       |       +       ! :     | + ! 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 116  [0x100d425a8]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 120  [0x100d425ac]
+                                                                +   !   :       |       +       ! :     | + ! 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 400  [0x100d426c4]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 112  [0x100ca858c]
+                                                                +   !   :       |       +       ! :     | + ! 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 472  [0x100d4270c]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TBufferFile::WriteULong(unsigned long)  (in libRIO.6.26.06.so) + 160  [0x100ca8634]
+                                                                +   !   :       |       +       ! :     | + ! 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 628  [0x100d427a8]
+                                                                +   !   :       |       +       ! :     | + 3 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 52  [0x117d157bc]
+                                                                +   !   :       |       +       ! :     | + ! 2 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 60  [0x117d157c4]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 52  [0x117d157bc]
+                                                                +   !   :       |       +       ! :     | + !   1 TBasket::Class()  (in libTree.6.26.06.so) + 24  [0x117d9d51c]
+                                                                +   !   :       |       +       ! :     | + 3 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 76  [0x117d157d4]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 84  [0x117d157dc]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBufferFile::WriteVersion(TClass const*, bool)  (in libRIO.6.26.06.so) + 232  [0x100ca5ffc]
+                                                                +   !   :       |       +       ! :     | + ! : 1 TBufferFile::WriteVersion(TClass const*, bool)  (in libRIO.6.26.06.so) + 232  [0x100ca5ffc]
+                                                                +   !   :       |       +       ! :     | + ! :   1 TBufferFile::WriteUShort(unsigned short)  (in libRIO.6.26.06.so) + 20  [0x100ca84d0]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBufferFile::WriteVersion(TClass const*, bool)  (in libRIO.6.26.06.so) + 244  [0x100ca6008]
+                                                                +   !   :       |       +       ! :     | + 3 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 508  [0x117d15984]
+                                                                +   !   :       |       +       ! :     | + ! 2 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 508  [0x117d15984]
+                                                                +   !   :       |       +       ! :     | + ! : 2 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 24,88  [0x100ca8534,0x100ca8574]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 112  [0x100ca858c]
+                                                                +   !   :       |       +       ! :     | + 2 TBufferFile::WriteFastArray(char const*, int)  (in libRIO.6.26.06.so) + 108  [0x100ca3c94]
+                                                                +   !   :       |       +       ! :     | + 1 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 168  [0x117d15830]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 112  [0x100ca858c]
+                                                                +   !   :       |       +       ! :     | + 1 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 528  [0x117d15998]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 112  [0x100ca858c]
+                                                                +   !   :       |       +       ! :     | + 1 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 548  [0x117d159ac]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 112  [0x100ca858c]
+                                                                +   !   :       |       +       ! :     | + 1 TBasket::Streamer(TBuffer&)  (in libTree.6.26.06.so) + 996  [0x117d15b6c]
+                                                                +   !   :       |       +       ! :     | + 1 TBufferFile::WriteClassBuffer(TClass const*, void*)  (in libRIO.6.26.06.so) + 540  [0x100ca7348]
+                                                                +   !   :       |       +       ! :     | + ! 1 TBufferFile::ApplySequence(TStreamerInfoActions::TActionSequence const&, void*)  (in libRIO.6.26.06.so) + 120  [0x100ca74c0]
+                                                                +   !   :       |       +       ! :     | + !   1 TStreamerInfoActions::GenericWriteAction(TBuffer&, void*, TStreamerInfoActions::TConfiguration const*)  (in libRIO.6.26.06.so) + 72  [0x100d617d8]
+                                                                +   !   :       |       +       ! :     | + !     1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 15648  [0x100ea3d90]
+                                                                +   !   :       |       +       ! :     | + !       1 TStreamerBase::WriteBuffer(TBuffer&, char*)  (in libCore.6.26.06.so) + 52  [0x100932924]
+                                                                +   !   :       |       +       ! :     | + !         1 TBufferFile::WriteClassBuffer(TClass const*, void*)  (in libRIO.6.26.06.so) + 540  [0x100ca7348]
+                                                                +   !   :       |       +       ! :     | + !           1 TBufferFile::ApplySequence(TStreamerInfoActions::TActionSequence const&, void*)  (in libRIO.6.26.06.so) + 120  [0x100ca74c0]
+                                                                +   !   :       |       +       ! :     | + !             1 TStreamerInfoActions::GenericWriteAction(TBuffer&, void*, TStreamerInfoActions::TConfiguration const*)  (in libRIO.6.26.06.so) + 72  [0x100d617d8]
+                                                                +   !   :       |       +       ! :     | + !               1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 10648  [0x100ea2a08]
+                                                                +   !   :       |       +       ! :     | + !                 1 TBufferFile::WriteFastArray(void**, TClass const*, int, bool, TMemberStreamer*)  (in libRIO.6.26.06.so) + 260  [0x100ca477c]
+                                                                +   !   :       |       +       ! :     | + !                   1 TBufferFile::WriteFastArray(void**, TClass const*, int, bool, TMemberStreamer*)  (in libRIO.6.26.06.so) + 260  [0x100ca477c]
+                                                                +   !   :       |       +       ! :     | + 1 TClass::StreamerTObjectInitialized(TClass const*, void*, TBuffer&, TClass const*)  (in libCore.6.26.06.so) + 12  [0x1008fdb24]
+                                                                +   !   :       |       +       ! :     | 9 TBufferFile::WriteObjectClass(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 112  [0x100ca4f70]
+                                                                +   !   :       |       +       ! :     | + 9 TExMap::GetValue(unsigned long long, long long, unsigned int&)  (in libCore.6.26.06.so) + 60,56,...  [0x1008be3e4,0x1008be3e0,...]
+                                                                +   !   :       |       +       ! :     | 2 TBufferFile::WriteObjectClass(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 252  [0x100ca4ffc]
+                                                                +   !   :       |       +       ! :     | + 1 TBufferFile::WriteObjectClass(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 252  [0x100ca4ffc]
+                                                                +   !   :       |       +       ! :     | + ! 1 TClass::HasDefaultConstructor(bool) const  (in libCore.6.26.06.so) + 16  [0x10090af6c]
+                                                                +   !   :       |       +       ! :     | + 1 TClass::HasDefaultConstructor(bool) const  (in libCore.6.26.06.so) + 40  [0x10090af84]
+                                                                +   !   :       |       +       ! :     | 2 TBufferFile::WriteObjectClass(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 356  [0x100ca5064]
+                                                                +   !   :       |       +       ! :     |   1 TBufferFile::WriteClass(TClass const*)  (in libRIO.6.26.06.so) + 104  [0x100ca5480]
+                                                                +   !   :       |       +       ! :     |   ! 1 TBufferFile::WriteClass(TClass const*)  (in libRIO.6.26.06.so) + 108  [0x100ca5484]
+                                                                +   !   :       |       +       ! :     |   1 TBufferFile::WriteClass(TClass const*)  (in libRIO.6.26.06.so) + 160  [0x100ca54b8]
+                                                                +   !   :       |       +       ! :     4 TBufferIO::WriteObjectAny(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 284  [0x100caae78]
+                                                                +   !   :       |       +       ! :     | 4 TClass::GetBaseClassOffset(TClass const*, void*, bool)  (in libCore.6.26.06.so) + 156  [0x1008ff22c]
+                                                                +   !   :       |       +       ! :     |   2 TClingClassInfo::GetBaseOffset(TClingClassInfo*, void*, bool)  (in libCling.6.26.06.so) + 52  [0x10433ac7c]
+                                                                +   !   :       |       +       ! :     |   + 2 std::__1::mutex::lock()  (in libc++.1.dylib) + 16  [0x18fb291a8]
+                                                                +   !   :       |       +       ! :     |   +   2 pthread_mutex_lock  (in libsystem_pthread.dylib) + 12,76  [0x18fbd27cc,0x18fbd280c]
+                                                                +   !   :       |       +       ! :     |   1 TClass::GetBaseClassOffset(TClass const*, void*, bool)  (in libCore.6.26.06.so) + 156  [0x1008ff22c]
+                                                                +   !   :       |       +       ! :     |   + 1 TClingClassInfo::GetBaseOffset(TClingClassInfo*, void*, bool)  (in libCling.6.26.06.so) + 44  [0x10433ac74]
+                                                                +   !   :       |       +       ! :     |   1 TCling::ClassInfo_GetBaseOffset(ClassInfo_t*, ClassInfo_t*, void*, bool) const  (in libCling.6.26.06.so) + 52  [0x1042f42b4]
+                                                                +   !   :       |       +       ! :     |     1 TClingDeclInfo::GetDecl() const  (in libCling.6.26.06.so) + 0  [0x104305230]
+                                                                +   !   :       |       +       ! :     1 TObjArray::Streamer(TBuffer&)  (in libCore.6.26.06.so) + 328  [0x1008cbb7c]
+                                                                +   !   :       |       +       ! :     | 1 TBufferIO::WriteObjectAny(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 32  [0x100caad7c]
+                                                                +   !   :       |       +       ! :     1 TObjArray::Streamer(TBuffer&)  (in libCore.6.26.06.so) + 328  [0x1008cbb7c]
+                                                                +   !   :       |       +       ! 104 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 3436  [0x100ea0ddc]
+                                                                +   !   :       |       +       ! : 103 TBufferFile::WriteFastArray(long long const*, int)  (in libRIO.6.26.06.so) + 72  [0x100ca407c]
+                                                                +   !   :       |       +       ! : | 103 TBuffer::Expand(int, bool)  (in libCore.6.26.06.so) + 136  [0x1008297b4]
+                                                                +   !   :       |       +       ! : |   76 TStorage::ReAllocChar(char*, unsigned long, unsigned long)  (in libCore.6.26.06.so) + 140  [0x100865604]
+                                                                +   !   :       |       +       ! : |   + 76 __bzero  (in libsystem_platform.dylib) + 64,68  [0x18fbeede0,0x18fbeede4]
+                                                                +   !   :       |       +       ! : |   27 TStorage::ReAllocChar(char*, unsigned long, unsigned long)  (in libCore.6.26.06.so) + 128  [0x1008655f8]
+                                                                +   !   :       |       +       ! : |     27 _platform_memmove  (in libsystem_platform.dylib) + 88  [0x18fbef128]
+                                                                +   !   :       |       +       ! : 1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 3436  [0x100ea0ddc]
+                                                                +   !   :       |       +       ! :   1 TBufferFile::WriteFastArray(long long const*, int)  (in libRIO.6.26.06.so) + 168  [0x100ca40dc]
+                                                                +   !   :       |       +       ! 2 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 12212  [0x100ea3024]
+                                                                +   !   :       |       +       ! : 2 TBufferFile::WriteTString(TString const&)  (in libRIO.6.26.06.so) + 116  [0x100c9ff3c]
+                                                                +   !   :       |       +       ! :   2 TBufferFile::WriteChar(char)  (in libRIO.6.26.06.so) + 52  [0x100ca84a0]
+                                                                +   !   :       |       +       ! :     2 TBuffer::Expand(int, bool)  (in libCore.6.26.06.so) + 136  [0x1008297b4]
+                                                                +   !   :       |       +       ! :       1 TStorage::ReAllocChar(char*, unsigned long, unsigned long)  (in libCore.6.26.06.so) + 128  [0x1008655f8]
+                                                                +   !   :       |       +       ! :       | 1 _platform_memmove  (in libsystem_platform.dylib) + 88  [0x18fbef128]
+                                                                +   !   :       |       +       ! :       1 TStorage::ReAllocChar(char*, unsigned long, unsigned long)  (in libCore.6.26.06.so) + 140  [0x100865604]
+                                                                +   !   :       |       +       ! :         1 __bzero  (in libsystem_platform.dylib) + 64  [0x18fbeede0]
+                                                                +   !   :       |       +       ! 1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 1636  [0x100ea06d4]
+                                                                +   !   :       |       +       ! : 1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 1636  [0x100ea06d4]
+                                                                +   !   :       |       +       ! :   1 TBufferFile::WriteFastArray(int const*, int)  (in libRIO.6.26.06.so) + 100  [0x100ca3e58]
+                                                                +   !   :       |       +       ! 1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 12340  [0x100ea30a4]
+                                                                +   !   :       |       +       !   1 TBufferFile::WriteClassBuffer(TClass const*, void*)  (in libRIO.6.26.06.so) + 540  [0x100ca7348]
+                                                                +   !   :       |       +       !     1 TBufferFile::ApplySequence(TStreamerInfoActions::TActionSequence const&, void*)  (in libRIO.6.26.06.so) + 120  [0x100ca74c0]
+                                                                +   !   :       |       +       !       1 TStreamerInfoActions::GenericWriteAction(TBuffer&, void*, TStreamerInfoActions::TConfiguration const*)  (in libRIO.6.26.06.so) + 72  [0x100d617d8]
+                                                                +   !   :       |       +       !         1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 12212  [0x100ea3024]
+                                                                +   !   :       |       +       !           1 TString::Streamer(TBuffer&)  (in libCore.6.26.06.so) + 0  [0x10086900c]
+                                                                +   !   :       |       +       1 TBufferFile::ApplySequence(TStreamerInfoActions::TActionSequence const&, void*)  (in libRIO.6.26.06.so) + 120  [0x100ca74c0]
+                                                                +   !   :       |       +         1 TStreamerInfoActions::GenericWriteAction(TBuffer&, void*, TStreamerInfoActions::TConfiguration const*)  (in libRIO.6.26.06.so) + 44  [0x100d617bc]
+                                                                +   !   :       |       5 TBufferFile::WriteObjectClass(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 136  [0x100ca4f88]
+                                                                +   !   :       |         5 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 52  [0x100ca8550]
+                                                                +   !   :       |           5 TBuffer::Expand(int, bool)  (in libCore.6.26.06.so) + 136  [0x1008297b4]
+                                                                +   !   :       |             3 TStorage::ReAllocChar(char*, unsigned long, unsigned long)  (in libCore.6.26.06.so) + 140  [0x100865604]
+                                                                +   !   :       |             ! 3 __bzero  (in libsystem_platform.dylib) + 64  [0x18fbeede0]
+                                                                +   !   :       |             2 TStorage::ReAllocChar(char*, unsigned long, unsigned long)  (in libCore.6.26.06.so) + 128  [0x1008655f8]
+                                                                +   !   :       |               2 _platform_memmove  (in libsystem_platform.dylib) + 88  [0x18fbef128]
+                                                                +   !   :       1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 10648  [0x100ea2a08]
+                                                                +   !   :       | 1 TBufferFile::WriteFastArray(void**, TClass const*, int, bool, TMemberStreamer*)  (in libRIO.6.26.06.so) + 288  [0x100ca4798]
+                                                                +   !   :       |   1 TBufferIO::WriteObjectAny(void const*, TClass const*, bool)  (in libRIO.6.26.06.so) + 208  [0x100caae2c]
+                                                                +   !   :       |     1 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 52  [0x100ca8550]
+                                                                +   !   :       |       1 TBuffer::Expand(int, bool)  (in libCore.6.26.06.so) + 136  [0x1008297b4]
+                                                                +   !   :       |         1 TStorage::ReAllocChar(char*, unsigned long, unsigned long)  (in libCore.6.26.06.so) + 140  [0x100865604]
+                                                                +   !   :       |           1 __bzero  (in libsystem_platform.dylib) + 68  [0x18fbeede4]
+                                                                +   !   :       1 int TStreamerInfo::WriteBufferAux<char**>(TBuffer&, char** const&, TStreamerInfo::TCompInfo* const*, int, int, int, int, int)  (in libRIO.6.26.06.so) + 12340  [0x100ea30a4]
+                                                                +   !   :         1 TBufferFile::WriteClassBuffer(TClass const*, void*)  (in libRIO.6.26.06.so) + 492  [0x100ca7318]
+                                                                +   !   :           1 TBufferFile::WriteVersion(TClass const*, bool)  (in libRIO.6.26.06.so) + 108  [0x100ca5f80]
+                                                                +   !   :             1 TClass::IsForeign() const  (in libCore.6.26.06.so) + 0  [0x100907aec]
+                                                                +   !   3 TKey::TKey(TObject const*, char const*, int, TDirectory*)  (in libRIO.6.26.06.so) + 192  [0x100d3f460]
+                                                                +   !   : 1 TDatime::TDatime()  (in libCore.6.26.06.so) + 40  [0x100832724]
+                                                                +   !   : | 1 time  (in libsystem_c.dylib) + 52  [0x18faa5c40]
+                                                                +   !   : |   1 gettimeofday  (in libsystem_c.dylib) + 56  [0x18faa0764]
+                                                                +   !   : |     1 __commpage_gettimeofday_internal  (in libsystem_kernel.dylib) + 44  [0x18fb9c960]
+                                                                +   !   : |       1 mach_absolute_time  (in libsystem_kernel.dylib) + 108  [0x18fb9af0c]
+                                                                +   !   : 1 TDatime::TDatime()  (in libCore.6.26.06.so) + 56  [0x100832734]
+                                                                +   !   : | 1 localtime_r  (in libsystem_c.dylib) + 52  [0x18faa0848]
+                                                                +   !   : |   1 tzsetwall_basic  (in libsystem_c.dylib) + 76  [0x18faa0bb4]
+                                                                +   !   : |     1 notify_check_tz  (in libsystem_c.dylib) + 44  [0x18faa0d70]
+                                                                +   !   : |       1 notify_check  (in libsystem_notify.dylib) + 1520  [0x19276a8fc]
+                                                                +   !   : |         1 ???  (in libsystem_notify.dylib)  load address 0x192768000 + 0x75dc  [0x19276f5dc]
+                                                                +   !   : |           1 ???  (in libsystem_notify.dylib)  load address 0x192768000 + 0x9908  [0x192771908]
+                                                                +   !   : 1 TDatime::TDatime()  (in libCore.6.26.06.so) + 0  [0x1008326fc]
+                                                                +   !   2 TKey::TKey(TObject const*, char const*, int, TDirectory*)  (in libRIO.6.26.06.so) + 328  [0x100d3f4e8]
+                                                                +   !   : 1 TStorage::ObjectAlloc(unsigned long)  (in libCore.6.26.06.so) + 20  [0x100865704]
+                                                                +   !   : | 1 operator new(unsigned long)  (in libc++abi.dylib) + 32  [0x18fb948a0]
+                                                                +   !   : |   1 _malloc_zone_malloc  (in libsystem_malloc.dylib) + 156  [0x18fa03748]
+                                                                +   !   : |     1 szone_malloc_should_clear  (in libsystem_malloc.dylib) + 92  [0x18f9e73a0]
+                                                                +   !   : |       1 tiny_malloc_should_clear  (in libsystem_malloc.dylib) + 220  [0x18f9e85d0]
+                                                                +   !   : |         1 tiny_malloc_should_clear  (in libsystem_malloc.dylib) + 220  [0x18f9e85d0]
+                                                                +   !   : 1 _platform_memset  (in libsystem_platform.dylib) + 28  [0x18fbeee1c]
+                                                                +   !   1 TKey::TKey(TObject const*, char const*, int, TDirectory*)  (in libRIO.6.26.06.so) + 320  [0x100d3f4e0]
+                                                                +   !   : 1 TKey::Build(TDirectory*, char const*, long long)  (in libRIO.6.26.06.so) + 308  [0x100d3e8ec]
+                                                                +   !   :   1 TKey::Build(TDirectory*, char const*, long long)  (in libRIO.6.26.06.so) + 340  [0x100d3e90c]
+                                                                +   !   1 TKey::TKey(TObject const*, char const*, int, TDirectory*)  (in libRIO.6.26.06.so) + 412  [0x100d3f53c]
+                                                                +   !   : 1 TDirectoryFile::AppendKey(TKey*)  (in libRIO.6.26.06.so) + 308  [0x100cfcbd0]
+                                                                +   !   :   1 THashList::AddLast(TObject*)  (in libCore.6.26.06.so) + 112  [0x1008bf2c8]
+                                                                +   !   :     1 THashTable::Add(TObject*)  (in libCore.6.26.06.so) + 0  [0x1008c0b28]
+                                                                +   !   1 TKey::TKey(TObject const*, char const*, int, TDirectory*)  (in libRIO.6.26.06.so) + 436  [0x100d3f554]
+                                                                +   !   : 1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 60  [0x100d42570]
+                                                                +   !   :   1 TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so) + 60  [0x100d42570]
+                                                                +   !   :     1 TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 68  [0x100ca8560]
+                                                                +   !   1 TKey::TKey(TObject const*, char const*, int, TDirectory*)  (in libRIO.6.26.06.so) + 1148  [0x100d3f81c]
+                                                                +   !     1 TKey::Create(int, TFile*)  (in libRIO.6.26.06.so) + 208  [0x100d40174]
+                                                                +   !       1 TKey::Create(int, TFile*)  (in libRIO.6.26.06.so) + 472  [0x100d4027c]
+                                                                +   35 TDirectoryFile::WriteTObject(TObject const*, char const*, char const*, int)  (in libRIO.6.26.06.so) + 568  [0x100d02350]
+                                                                +   ! 34 TKey::Delete(char const*)  (in libRIO.6.26.06.so) + 280  [0x100d405a0]
+                                                                +   ! : 24 TFile::MakeFree(long long, long long)  (in libRIO.6.26.06.so) + 216  [0x100d108c0]
+                                                                +   ! : | 24 TFile::Flush()  (in libRIO.6.26.06.so) + 116  [0x100d0fc1c]
+                                                                +   ! : |   24 fsync  (in libsystem_kernel.dylib) + 8  [0x18fb9e570]
+                                                                +   ! : 9 TFile::MakeFree(long long, long long)  (in libRIO.6.26.06.so) + 192  [0x100d108a8]
+                                                                +   ! : | 7 TFile::WriteBuffer(char const*, int)  (in libRIO.6.26.06.so) + 224  [0x100d132e0]
+                                                                +   ! : | + 7 TFile::SysWrite(int, void const*, int)  (in libRIO.6.26.06.so) + 28  [0x100d1c688]
+                                                                +   ! : | +   7 write  (in libsystem_kernel.dylib) + 8  [0x18fb9e6f8]
+                                                                +   ! : | 2 TFile::WriteBuffer(char const*, int)  (in libRIO.6.26.06.so) + 196  [0x100d132c4]
+                                                                +   ! : |   2 TUnixSystem::IgnoreSignal(ESignals, bool)  (in libCore.6.26.06.so) + 120  [0x1009530e8]
+                                                                +   ! : |     2 __platform_sigaction  (in libsystem_platform.dylib) + 108  [0x18fbee798]
+                                                                +   ! : |       2 __sigaction  (in libsystem_kernel.dylib) + 0,8  [0x18fba1074,0x18fba107c]
+                                                                +   ! : 1 TFile::MakeFree(long long, long long)  (in libRIO.6.26.06.so) + 168  [0x100d10890]
+                                                                +   ! :   1 TFile::Seek(long long, TFile::ERelativeTo)  (in libRIO.6.26.06.so) + 140  [0x100d12d44]
+                                                                +   ! :     1 __lseek  (in libsystem_kernel.dylib) + 8  [0x18fb9c378]
+                                                                +   ! 1 THashList::Remove(TObject*)  (in libCore.6.26.06.so) + 112  [0x1008c0534]
+                                                                +   !   1 THashTable::FindObject(TObject const*) const  (in libCore.6.26.06.so) + 164  [0x1008c1aec]
+                                                                +   !     1 TList::FindObject(TObject const*) const  (in libCore.6.26.06.so) + 144  [0x1008c5820]
+                                                                +   !       1 TObject::IsEqual(TObject const*) const  (in libCore.6.26.06.so) + 0  [0x10084dd78]
+                                                                +   2 TDirectoryFile::WriteTObject(TObject const*, char const*, char const*, int)  (in libRIO.6.26.06.so) + 536  [0x100d02330]
+                                                                +   ! 2 TDirectoryFile::GetKey(char const*, short) const  (in libRIO.6.26.06.so) + 116  [0x100cff688]
+                                                                +   !   2 ROOT::RRangeCast<TKey*, true, TCollection const&>::begin()  (in libRIO.6.26.06.so) + 88  [0x100cfe738]
+                                                                +   !     2 TIter::TIter(TIter const&)  (in libCore.6.26.06.so) + 72  [0x1008bd578]
+                                                                +   !       2 TList::MakeIterator(bool) const  (in libCore.6.26.06.so) + 92  [0x1008c5afc]
+                                                                +   !         2 operator new(unsigned long)  (in libc++abi.dylib) + 32  [0x18fb948a0]
+                                                                +   !           2 _malloc_zone_malloc  (in libsystem_malloc.dylib) + 156  [0x18fa03748]
+                                                                +   !             2 szone_malloc_should_clear  (in libsystem_malloc.dylib) + 92  [0x18f9e73a0]
+                                                                +   !               2 szone_malloc_should_clear  (in libsystem_malloc.dylib) + 92  [0x18f9e73a0]
+                                                                +   !                 2 tiny_malloc_should_clear  (in libsystem_malloc.dylib) + 204  [0x18f9e85c0]
+                                                                +   1 TDirectoryFile::WriteTObject(TObject const*, char const*, char const*, int)  (in libRIO.6.26.06.so) + 164  [0x100d021bc]
+                                                                +     1 TString::ToLower()  (in libCore.6.26.06.so) + 64  [0x100868a74]
+                                                                +       1 __tolower  (in libsystem_c.dylib) + 0  [0x18faa06b4]
+                                                                548 RunManager::SimulationBackend()  (in RunManager.so) + 204  [0x1137c0048]
+                                                                + 547 TFile::Flush()  (in libRIO.6.26.06.so) + 116  [0x100d0fc1c]
+                                                                + ! 547 fsync  (in libsystem_kernel.dylib) + 8  [0x18fb9e570]
+                                                                + 1 TFile::Flush()  (in libRIO.6.26.06.so) + 32  [0x100d0fbc8]
+                                                                +   1 TFile::IsOpen() const  (in libRIO.6.26.06.so) + 0  [0x100d107d8]
+                                                                8 RunManager::SimulationBackend()  (in RunManager.so) + 376  [0x1137c00f4]
+                                                                + 2 DetectorEffects::SoftParticlePixelNoise(EventManager*)  (in DetectorEffects.so) + 188  [0x11338cf40]
+                                                                + ! 2 TH2::GetRandom2(double&, double&, TRandom*)  (in libHist.6.26.06.so) + 208  [0x114f04fe4]
+                                                                + !   2 TH2::GetRandom2(double&, double&, TRandom*)  (in libHist.6.26.06.so) + 228,264  [0x114f04ff8,0x114f0501c]
+                                                                + 2 DetectorEffects::SoftParticlePixelNoise(EventManager*)  (in DetectorEffects.so) + 364  [0x11338cff0]
+                                                                + ! 2 TH2::GetRandom2(double&, double&, TRandom*)  (in libHist.6.26.06.so) + 208  [0x114f04fe4]
+                                                                + !   2 TH2::GetRandom2(double&, double&, TRandom*)  (in libHist.6.26.06.so) + 228,264  [0x114f04ff8,0x114f0501c]
+                                                                + 2 DetectorEffects::SoftParticlePixelNoise(EventManager*)  (in DetectorEffects.so) + 372  [0x11338cff8]
+                                                                + ! 2 __sincos_stret  (in libsystem_m.dylib) + 628,864  [0x19a69a1d0,0x19a69a2bc]
+                                                                + 1 DetectorEffects::SoftParticlePixelNoise(EventManager*)  (in DetectorEffects.so) + 260  [0x11338cf88]
+                                                                + ! 1 TTree::GetBranch(char const*)  (in libTree.6.26.06.so) + 60  [0x117d857e0]
+                                                                + !   1 TObjArray::FindObject(char const*) const  (in libCore.6.26.06.so) + 96  [0x1008cb864]
+                                                                + !     1 TObjArray::FindObject(char const*) const  (in libCore.6.26.06.so) + 96  [0x1008cb864]
+                                                                + !       1 TObjArray::GetAbsLast() const  (in libCore.6.26.06.so) + 92  [0x1008ca7f4]
+                                                                + 1 DetectorEffects::SoftParticlePixelNoise(EventManager*)  (in DetectorEffects.so) + 276  [0x11338cf98]
+                                                                +   1 TBranch::FillImpl(ROOT::Internal::TBranchIMTHelper*)  (in libTree.6.26.06.so) + 204  [0x117d1ebe4]
+                                                                +     1 TBranch::FillLeavesImpl(TBuffer&)  (in libTree.6.26.06.so) + 72  [0x117d1c958]
+                                                                +       1 TBranch::FillLeavesImpl(TBuffer&)  (in libTree.6.26.06.so) + 72  [0x117d1c958]
+                                                                +         1 TLeafD::FillBasket(TBuffer&)  (in libTree.6.26.06.so) + 24  [0x117d5e6f4]
+                                                                6 RunManager::SimulationBackend()  (in RunManager.so) + 352  [0x1137c00dc]
+                                                                + 6 ExperimentSimulation::ProcessEvent(EventManager*)  (in ExperimentSimulation.so) + 104  [0x113784174]
+                                                                +   2 ExperimentSimulation::ProcessTrack(Track*)  (in ExperimentSimulation.so) + 540  [0x1137843cc]
+                                                                +   ! 1 ExperimentSimulation::ProcessHit(Track*&, Hit*, int)  (in ExperimentSimulation.so) + 232  [0x113784780]
+                                                                +   ! : 1 __sincos_stret  (in libsystem_m.dylib) + 600  [0x19a69a1b4]
+                                                                +   ! 1 ExperimentSimulation::ProcessHit(Track*&, Hit*, int)  (in ExperimentSimulation.so) + 316  [0x1137847d4]
+                                                                +   !   1 TBranch::SetAddress(void*)  (in libTree.6.26.06.so) + 172  [0x117d23890]
+                                                                +   !     1 TLeafD::SetAddress(void*)  (in libTree.6.26.06.so) + 28  [0x117d5eae0]
+                                                                +   !       1 TLeafD::SetAddress(void*)  (in libTree.6.26.06.so) + 56  [0x117d5eafc]
+                                                                +   1 ExperimentSimulation::ProcessTrack(Track*)  (in ExperimentSimulation.so) + 192  [0x113784270]
+                                                                +   ! 1 ExperimentSimulation::GetGeomIntersection(Track*, Hit*)  (in ExperimentSimulation.so) + 252  [0x113784590]
+                                                                +   !   1 TGeoTube::GetRmax() const  (in libGeom.6.26.06.so) + 0  [0x117a2c944]
+                                                                +   1 ExperimentSimulation::ProcessTrack(Track*)  (in ExperimentSimulation.so) + 232  [0x113784298]
+                                                                +   ! 1 ExperimentSimulation::ProcessHit(Track*&, Hit*, int)  (in ExperimentSimulation.so) + 460  [0x113784864]
+                                                                +   !   1 TObject::operator delete(void*)  (in libCore.6.26.06.so) + 36  [0x10084d4bc]
+                                                                +   !     1 DYLD-STUB$$operator delete(void*)  (in libCore.6.26.06.so) + 4  [0x100aa83a0]
+                                                                +   1 ExperimentSimulation::ProcessTrack(Track*)  (in ExperimentSimulation.so) + 308  [0x1137842e4]
+                                                                +   ! 1 TransportEngine::MultipleScattering(Track*, Track*&, TVector3*, int, double, double, bool, bool)  (in TransportEngine.so) + 508  [0x113375874]
+                                                                +   !   1 __sincos_stret  (in libsystem_m.dylib) + 316  [0x19a69a098]
+                                                                +   1 ExperimentSimulation::ProcessTrack(Track*)  (in ExperimentSimulation.so) + 604  [0x11378440c]
+                                                                +     1 TransportEngine::MultipleScattering(Track*, Track*&, TVector3*, int, double, double, bool, bool)  (in TransportEngine.so) + 408  [0x113375810]
+                                                                +       1 acos  (in libsystem_m.dylib) + 16  [0x19a69f848]
+                                                                4 RunManager::SimulationBackend()  (in RunManager.so) + 284  [0x1137c0098]
+                                                                + 2 ParticleGun::GenerateCollision()  (in ParticleGun.so) + 276  [0x1137a0b58]
+                                                                + ! 1 TBranch::FillImpl(ROOT::Internal::TBranchIMTHelper*)  (in libTree.6.26.06.so) + 148  [0x117d1ebac]
+                                                                + ! : 1 TBasket::Update(int, int)  (in libTree.6.26.06.so) + 8  [0x117d15f3c]
+                                                                + ! 1 TBranch::FillImpl(ROOT::Internal::TBranchIMTHelper*)  (in libTree.6.26.06.so) + 220  [0x117d1ebf4]
+                                                                + !   1 TBranch::FillImpl(ROOT::Internal::TBranchIMTHelper*)  (in libTree.6.26.06.so) + 624  [0x117d1ed88]
+                                                                + 1 ParticleGun::GenerateCollision()  (in ParticleGun.so) + 60  [0x1137a0a80]
+                                                                + ! 1 TH1::GetRandom(TRandom*) const  (in libHist.6.26.06.so) + 0  [0x114ee3854]
+                                                                + 1 ParticleGun::GenerateCollision()  (in ParticleGun.so) + 188  [0x1137a0b00]
+                                                                +   1 TTree::GetBranch(char const*)  (in libTree.6.26.06.so) + 60  [0x117d857e0]
+                                                                +     1 DYLD-STUB$$TObjArray::FindObject(char const*) const  (in libTree.6.26.06.so) + 0  [0x117dad3d0]
+                                                                2 RunManager::SimulationBackend()  (in RunManager.so) + 428  [0x1137c0128]
+                                                                  2 EventManager::~EventManager()  (in EventManager.so) + 12  [0x113768b94]
+                                                                    2 EventManager::~EventManager()  (in EventManager.so) + 92  [0x113768a28]
+                                                                      2 TObject::operator delete(void*)  (in libCore.6.26.06.so) + 36  [0x10084d4bc]
+                                                                        2 free_tiny  (in libsystem_malloc.dylib) + 432  [0x18f9eb284]
+                                                                          2 tiny_free_no_lock  (in libsystem_malloc.dylib) + 576  [0x18f9eb644]
+                                                                            1 tiny_free_list_add_ptr  (in libsystem_malloc.dylib) + 1108  [0x18f9ec14c]
+                                                                            1 tiny_free_no_lock  (in libsystem_malloc.dylib) + 604  [0x18f9eb660]
+
+Total number in stack (recursive counted multiple, when >=5):
+        9       TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so) + 0  [0x100ca851c]
+        6       TBufferFile::ApplySequence(TStreamerInfoActions::TActionSequence const&, void*)  (in libRIO.6.26.06.so) + 120  [0x100ca74c0]
+        6       TBufferFile::WriteUShort(unsigned short)  (in libRIO.6.26.06.so) + 0  [0x100ca84bc]
+        5       TBufferFile::WriteClassBuffer(TClass const*, void*)  (in libRIO.6.26.06.so) + 540  [0x100ca7348]
+        5       TStreamerInfoActions::GenericWriteAction(TBuffer&, void*, TStreamerInfoActions::TConfiguration const*)  (in libRIO.6.26.06.so) + 72  [0x100d617d8]
+        5       _platform_memmove  (in libsystem_platform.dylib) + 0  [0x18fbef0d0]
+
+Sort by top of stack, same collapsed (when >= 5):
+        write  (in libsystem_kernel.dylib)        805
+        fsync  (in libsystem_kernel.dylib)        571
+        _platform_memmove  (in libsystem_platform.dylib)        387
+        madvise  (in libsystem_kernel.dylib)        83
+        __bzero  (in libsystem_platform.dylib)        81
+        TBufferFile::WriteUShort(unsigned short)  (in libRIO.6.26.06.so)        22
+        TBufferFile::WriteUInt(unsigned int)  (in libRIO.6.26.06.so)        11
+        TExMap::GetValue(unsigned long long, long long, unsigned int&)  (in libCore.6.26.06.so)        9
+        __sigaction  (in libsystem_kernel.dylib)        8
+        TBufferFile::WriteFastArray(char const*, int)  (in libRIO.6.26.06.so)        6
+        TKey::Streamer(TBuffer&)  (in libRIO.6.26.06.so)        6
+
+Binary Images:
+       0x100040000 -        0x100043fff +root.exe (0) <657B60C4-0173-3093-AB05-731712A00785> /Users/*/root.exe
+       0x100180000 -        0x100197fff +libRint.6.26.06.so (0) <552CDD8B-482B-39D8-B5DE-4E1CC2C86F26> /Users/*/libRint.6.26.06.so
+       0x100274000 -        0x100297fff +libThread.6.26.06.so (0) <6CD18CE2-12C0-37F9-AB33-3B4002BED7EC> /Users/*/libThread.6.26.06.so
+       0x100300000 -        0x10035d74b  dyld (960) <75627683-A780-32AD-AE34-CF86DD23A26B> /usr/lib/dyld
+       0x1003b4000 -        0x1003d3ffb +libtbb.dylib (0) <2A57918E-1155-3426-9333-EEEFF32F9A37> /Users/*/libtbb.dylib
+       0x10080c000 -        0x100afffe7 +libCore.6.26.06.so (0) <02D27AF5-BB42-35A2-917F-54FBE748691A> /Users/*/libCore.6.26.06.so
+       0x100c98000 -        0x100eebff3 +libRIO.6.26.06.so (0) <9557EB73-2871-3624-9FAE-61EE0C6E1E18> /Users/*/libRIO.6.26.06.so
+       0x10421c000 -        0x104223fff +libMultiProc.6.26.06.so (0) <4041FDEA-732B-3904-93CF-1CD43565E4EB> /Users/*/libMultiProc.6.26.06.so
+       0x10423c000 -        0x106963fff +libCling.6.26.06.so (0) <D22795E0-D166-31DB-97C2-714736C3E24F> /Users/*/libCling.6.26.06.so
+       0x1132fc000 -        0x113303ffb +libImt.6.26.06.so (0) <08C6EE8F-63C0-39C8-BBC9-8D4E6512D592> /Users/*/libImt.6.26.06.so
+       0x113330000 -        0x113337ff7 +ProgramConfig.so (0) <31585720-0309-3F60-9670-0F039CCAE903> /Users/*/Desktop/*/ProgramConfig.so
+       0x113348000 -        0x11334bfff +RndEngine.so (0) <26C8EA20-9DD6-3AAC-A09A-DDACFB2947CE> /Users/*/Desktop/*/RndEngine.so
+       0x113358000 -        0x11335ffff +Track.so (0) <A767D1BE-59C7-33D6-8451-6200E6FC5F6C> /Users/*/Desktop/*/Track.so
+       0x113370000 -        0x113377fff +TransportEngine.so (0) <F9056055-7DF2-3290-8EE6-CCBE85DCC254> /Users/*/Desktop/*/TransportEngine.so
+       0x113388000 -        0x11338fff7 +DetectorEffects.so (0) <1E5CE6FA-2929-3D80-8888-46A82E3127A3> /Users/*/Desktop/*/DetectorEffects.so
+       0x1133a0000 -        0x1133cbffb +libPhysics.6.26.06.so (0) <37DDFDCD-4354-3093-8006-311CBC3FD2B1> /Users/*/libPhysics.6.26.06.so
+       0x113500000 -        0x113507fff +Cli.so (0) <844CBC07-E346-3EAD-BDA9-E7F75F2164FD> /Users/*/Desktop/*/Cli.so
+       0x11352c000 -        0x11368ffdf +libMathCore.6.26.06.so (0) <5097B709-A716-310A-A438-7322D47179BB> /Users/*/libMathCore.6.26.06.so
+       0x113764000 -        0x11376bfff +EventManager.so (0) <A77F2544-7012-3632-9085-13494E8D2FCE> /Users/*/Desktop/*/EventManager.so
+       0x113780000 -        0x113787fff +ExperimentSimulation.so (0) <E2BB95F8-C03A-338F-A9B0-EACECC4DC9F4> /Users/*/Desktop/*/ExperimentSimulation.so
+       0x11379c000 -        0x1137a3fff +ParticleGun.so (0) <177B0B38-3F8F-3A61-93EC-A965FFC1CE76> /Users/*/Desktop/*/ParticleGun.so
+       0x1137b8000 -        0x1137c3fff +RunManager.so (0) <4816BE02-D7EE-3DB5-8A4F-BA11C9D6373C> /Users/*/Desktop/*/RunManager.so
+       0x1137dc000 -        0x1137e7fff +libRCsg.6.26.06.so (0) <471824E3-FA33-364B-838A-185329E9DAD5> /Users/*/libRCsg.6.26.06.so
+       0x113a00000 -        0x113a07fff +EventDisplay.so (0) <940A5498-D2B0-3CDF-A488-B3DEB54AC92D> /Users/*/Desktop/*/EventDisplay.so
+       0x113a1c000 -        0x113a23fff +CalculateDeltaPhiMax.so (0) <B4CDB50B-D1F8-3739-99AA-76BC133DD074> /Users/*/Desktop/*/CalculateDeltaPhiMax.so
+       0x113a40000 -        0x113c2fffb +libNet.6.26.06.so (0) <062FDAD1-37AC-35D3-8200-C656CADDFC1B> /Users/*/libNet.6.26.06.so
+       0x113d24000 -        0x113d47fff +libEG.6.26.06.so (0) <40062E64-9DE9-3DC6-B904-965C6752CD75> /Users/*/libEG.6.26.06.so
+       0x113dbc000 -        0x113dc7fff +HitsAnalysis.so (0) <533A4B5A-EF49-3250-B2B1-367CE228D1E7> /Users/*/Desktop/*/HitsAnalysis.so
+       0x113ddc000 -        0x113de7fff +ResultsAnalysis.so (0) <C91E01EA-1E35-31F6-9774-F242B86B9F6B> /Users/*/Desktop/*/ResultsAnalysis.so
+       0x114c4c000 -        0x114d1fff7 +libMatrix.6.26.06.so (0) <5BAEBB11-A009-3A44-8D53-D742E0D25D62> /Users/*/libMatrix.6.26.06.so
+       0x114e20000 -        0x11501fff7 +libHist.6.26.06.so (0) <564B914E-9D66-3C8F-9230-54BB9150F950> /Users/*/libHist.6.26.06.so
+       0x115148000 -        0x11518bff7 +libGraf3d.6.26.06.so (0) <9167702C-3987-3A09-A867-E5A959FA34B3> /Users/*/libGraf3d.6.26.06.so
+       0x117a00000 -        0x117b23ffb +libGeom.6.26.06.so (0) <C9D7B9A6-4EFB-3CAD-AE5F-0399D10B6666> /Users/*/libGeom.6.26.06.so
+       0x117d0c000 -        0x117dc3ffb +libTree.6.26.06.so (0) <1BE29593-661C-3BAB-8BD9-4DEFF254A24F> /Users/*/libTree.6.26.06.so
+       0x117ee0000 -        0x117f3bffb +libGpad.6.26.06.so (0) <F75C98AD-F8E7-3025-A0D5-0F29EA368993> /Users/*/libGpad.6.26.06.so
+       0x128800000 -        0x128893ff7 +libGed.6.26.06.so (0) <57E24376-1804-305A-B47F-9CE116746437> /Users/*/libGed.6.26.06.so
+       0x1288e4000 -        0x12899fff3 +libTreePlayer.6.26.06.so (0) <0565E341-7A7E-3CB3-BFBF-69ED5AF63B7D> /Users/*/libTreePlayer.6.26.06.so
+       0x128a6c000 -        0x128b97ff3 +libEve.6.26.06.so (0) <05E44F41-DD3B-32F9-94CC-BEB28975F790> /Users/*/libEve.6.26.06.so
+       0x128f00000 -        0x128f7fffb +libFTGL.6.26.06.so (0) <B2D9C294-291B-3E5A-9C6C-A866E3E1BDCE> /Users/*/libFTGL.6.26.06.so
+       0x12a800000 -        0x12a913ff7 +libRGL.6.26.06.so (0) <EB22C055-1CE5-3819-9887-5780B90AE188> /Users/*/libRGL.6.26.06.so
+       0x12a9d8000 -        0x12aaa3ffb +libGLEW.dylib (0) <1156642E-E704-327A-BFC9-FE9F19D6FA94> /Users/*/libGLEW.dylib
+       0x12accc000 -        0x12ae77ff3 +libGui.6.26.06.so (0) <BB99929A-2030-3948-AB4E-BE256963A962> /Users/*/libGui.6.26.06.so
+       0x12afd0000 -        0x12b0dffff +libGraf.6.26.06.so (0) <01C71138-BA4C-36E3-8779-F8D90F640FA6> /Users/*/libGraf.6.26.06.so
+       0x12b4f8000 -        0x12b677ffb +libMathMore.6.26.06.so (0) <5D452652-BBC8-3736-9B18-6B8D6681C8C7> /Users/*/libMathMore.6.26.06.so
+       0x18f8fd000 -        0x18f8feffe  libsystem_blocks.dylib (79.1) <21AF0B1C-31F1-3FBC-9476-630E06950161> /usr/lib/system/libsystem_blocks.dylib
+       0x18f8ff000 -        0x18f940ff3  libxpc.dylib (2236.140.2) <FCCB6B8F-0BB4-3FC7-BAEE-11708C97E04B> /usr/lib/system/libxpc.dylib
+       0x18f941000 -        0x18f95affe  libsystem_trace.dylib (1375.140.2) <42EBF115-C711-3F7A-95F7-3BE2F0BF0890> /usr/lib/system/libsystem_trace.dylib
+       0x18f95b000 -        0x18f9e4fef  libcorecrypto.dylib (1218.120.10) <CFDB5746-EDEA-3D62-B0EC-94CED340A5BB> /usr/lib/system/libcorecrypto.dylib
+       0x18f9e5000 -        0x18fa0fffb  libsystem_malloc.dylib (374.120.1) <0903587E-1A8A-381F-B7D6-C3D97E27AD4C> /usr/lib/system/libsystem_malloc.dylib
+       0x18fa10000 -        0x18fa56ff7  libdispatch.dylib (1325.120.2) <035D23D9-4CB5-3759-9059-1F7878F89FEE> /usr/lib/system/libdispatch.dylib
+       0x18fa57000 -        0x18fa94fee  libobjc.A.dylib (841.13) <3D936842-5903-31AD-B1AE-1DE4F4B448A6> /usr/lib/libobjc.A.dylib
+       0x18fa95000 -        0x18fa97fff  libsystem_featureflags.dylib (56) <287D9F82-C7DA-3E01-9E27-9E8ACBD558BE> /usr/lib/system/libsystem_featureflags.dylib
+       0x18fa98000 -        0x18fb19fff  libsystem_c.dylib (1507.100.9) <93FC2587-038E-31E1-B16B-369979E72CB1> /usr/lib/system/libsystem_c.dylib
+       0x18fb1a000 -        0x18fb80ffb  libc++.1.dylib (1300.25) <CA366DE6-C395-319A-B3AB-E22126D28394> /usr/lib/libc++.1.dylib
+       0x18fb81000 -        0x18fb98ffb  libc++abi.dylib (1300.25) <A260A581-F4A9-3036-BB4F-16A9C6CC54D5> /usr/lib/libc++abi.dylib
+       0x18fb99000 -        0x18fbd0ffb  libsystem_kernel.dylib (8020.141.5) <D5CDDE7E-7037-3A70-9CE4-9E3847DA6CE0> /usr/lib/system/libsystem_kernel.dylib
+       0x18fbd1000 -        0x18fbddff3  libsystem_pthread.dylib (486.100.11) <F32FF902-BA43-30B0-AD43-A2A8A9FF69FE> /usr/lib/system/libsystem_pthread.dylib
+       0x18fbde000 -        0x18fbeafff  libdyld.dylib (960) <7FC59050-3C9C-3F30-809C-530D8C48471A> /usr/lib/system/libdyld.dylib
+       0x18fbeb000 -        0x18fbf2feb  libsystem_platform.dylib (273.100.5) <6F19BD1B-352C-3FF0-B9C0-03CEAFEBFE22> /usr/lib/system/libsystem_platform.dylib
+       0x18fbf3000 -        0x18fc1ffff  libsystem_info.dylib (554.120.2) <BDE59A88-8A24-34E9-8185-27F5DE15EDCE> /usr/lib/system/libsystem_info.dylib
+       0x18fc20000 -        0x190166ff1  com.apple.CoreFoundation (6.9 - 1866) <1643F3D9-7049-37E4-B844-C0C0A42BDE3B> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+       0x190167000 -        0x1903c7ffc  com.apple.LaunchServices (1141.1 - 1141.1) <F6CA2149-FF26-31A5-BD0F-B1E2E3D3482E> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+       0x1903c8000 -        0x1904f1ffe  com.apple.gpusw.MetalTools (1.0 - 1) <2741C520-1AEC-3147-BC21-6536A0013413> /System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools
+       0x1904f2000 -        0x190767ffb  libBLAS.dylib (1381.100.10) <442C8D72-228C-3716-9212-0D92EB3C2206> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+       0x190768000 -        0x1907afff3  com.apple.Lexicon-framework (1.0 - 98.1) <ED14BA17-ADC2-3994-BCCF-0ED962A17F84> /System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon
+       0x1907b0000 -        0x190816ff7  libSparse.dylib (108.120.2) <322E9C77-F6FB-3099-A95F-75E880F14AEB> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib
+       0x190817000 -        0x19089cff3  com.apple.SystemConfiguration (1.21 - 1.21) <4DB44433-BA74-3785-8A42-39A7DCD0DD83> /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+       0x19089d000 -        0x1908d0ff7  libCRFSuite.dylib (51) <1569B55B-F9D2-3BDE-AD90-1DD207091FA8> /usr/lib/libCRFSuite.dylib
+       0x1908d1000 -        0x190b23ff4  libmecabra.dylib (972.11) <7D3CA5E8-679D-3630-AEF4-8ADFE498C5C8> /usr/lib/libmecabra.dylib
+       0x190b24000 -        0x190f15ff4  com.apple.Foundation (6.9 - 1866) <59FF845A-05B2-3B64-AE06-6EF1D6AEE83E> /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+       0x190f16000 -        0x191015ffb  com.apple.LanguageModeling (1.0 - 277.4) <6E03015D-BA3A-389F-8684-7B01269E2770> /System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling
+       0x191016000 -        0x191135ffa  com.apple.CoreDisplay (265.100 - 265.100) <7E8FE817-7746-3F5A-B0E4-9980826F1A7A> /System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay
+       0x191136000 -        0x1913d9feb  com.apple.audio.AudioToolboxCore (1.0 - 1245.89) <291F8F2F-2B8E-3993-8451-7598FBBA9E91> /System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore
+       0x1913da000 -        0x1915b5ff6  com.apple.CoreText (710.5.0.1 - 710.5.0.1) <831ECB5C-CAC4-3DD5-BD6E-B1720577750F> /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
+       0x1915b6000 -        0x191cd9ff6  com.apple.audio.CoreAudio (5.0 - 5.0) <B5351932-EBAC-3219-AA3A-0D088BCB59DD> /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+       0x191cda000 -        0x192058fff  com.apple.security (7.0 - 60158.140.3) <8EFF1A00-6572-3696-B116-8F934506A858> /System/Library/Frameworks/Security.framework/Versions/A/Security
+       0x192059000 -        0x19230eff7  libicucore.A.dylib (70104.3) <C96CD386-E099-3954-8BA0-D835E5964094> /usr/lib/libicucore.A.dylib
+       0x19230f000 -        0x192319ff3  libsystem_darwin.dylib (1507.100.9) <0829E1FD-454B-3235-9698-8E1792C033EA> /usr/lib/system/libsystem_darwin.dylib
+       0x19231a000 -        0x192615ff5  com.apple.CoreServices.CarbonCore (1319 - 1319) <6B76D2FF-6D4A-3573-A663-E74B14811E9E> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+       0x192653000 -        0x192690ffd  com.apple.CSStore (1141.1 - 1141.1) <C1E3CEC0-A876-3964-A161-0990F5073E81> /System/Library/PrivateFrameworks/CoreServicesStore.framework/Versions/A/CoreServicesStore
+       0x192691000 -        0x192767ff2  com.apple.framework.IOKit (2.0.2 - 1955.140.2) <D381F1A3-5A59-37E7-A245-2E3334A3AE0E> /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+       0x192768000 -        0x192777fff  libsystem_notify.dylib (301) <3100DA54-C0C4-343C-BF39-95E175D719EE> /usr/lib/system/libsystem_notify.dylib
+       0x1927c9000 -        0x193681fff  com.apple.AppKit (6.9 - 2113.60.148) <07BC3607-552A-3EB9-A941-4911C589DBC5> /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+       0x193682000 -        0x1938f2ff0  com.apple.UIFoundation (1.0 - 788) <EB391B3E-7FA2-31FB-A7B0-A8587B94B1A8> /System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation
+       0x1938f3000 -        0x193906ff3  com.apple.UniformTypeIdentifiers (709 - 709) <B5A91C94-72AC-36B9-99E8-2C433FC775A2> /System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers
+       0x193d9c000 -        0x19482efff  libnetwork.dylib (2750.140.3.0.2) <7508C989-8F18-32B9-8126-85D71FA53589> /usr/lib/libnetwork.dylib
+       0x19482f000 -        0x194ce3ffa  com.apple.CFNetwork (1335.0.3 - 1335.0.3) <F0720CCF-FE46-3541-8835-DBAA254CEF61> /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+       0x194ce4000 -        0x194cfcff7  libsystem_networkextension.dylib (1471.141.2) <7FBD4E35-5BB1-36E4-BCDB-0BD93165E9E1> /usr/lib/system/libsystem_networkextension.dylib
+       0x194cfd000 -        0x194cfefff  libenergytrace.dylib (23) <30397A13-948C-38BD-9FB4-9E265CC8F3BF> /usr/lib/libenergytrace.dylib
+       0x194cff000 -        0x194d55fca  libMobileGestalt.dylib (1073.100.31.0.1) <3EF08509-01B8-3A80-8DF4-DFE562162580> /usr/lib/libMobileGestalt.dylib
+       0x194d56000 -        0x194d6dff7  libsystem_asl.dylib (392.100.2) <6BC72B74-1A29-3C7E-AC7C-B805CE9AD0DB> /usr/lib/system/libsystem_asl.dylib
+       0x194d6e000 -        0x194d89ff9  com.apple.TCC (1.0 - 1) <226072B2-C4DA-35E8-99DF-DF726521FB0A> /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
+       0x194d8a000 -        0x195165fff  com.apple.SkyLight (1.600.0 - 687) <73D946B4-C187-3095-BC77-59AD2D0DA9BC> /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+       0x195166000 -        0x195773ff3  com.apple.CoreGraphics (2.0 - 1557.6.4) <890EC7A0-D781-318F-9A8D-69BA59450FF3> /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+       0x195774000 -        0x195872ff7  com.apple.ColorSync (4.13.0 - 3521.7.4) <2F290C9D-3BCA-37CB-A4D3-C0F93942D2EC> /System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync
+       0x195873000 -        0x1958d2ff4  com.apple.HIServices (1.22 - 740) <3327DCAD-B973-3C15-905D-12937F1963F8> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+       0x195ce0000 -        0x1960b5ffc  com.apple.CoreData (120 - 1152.5) <11C6F60B-9498-3300-A89F-5C5990F9DA44> /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+       0x1960b6000 -        0x1960cffff  com.apple.ProtocolBuffer (1 - 288.22.9.15.1) <0F09CB36-B6B8-3C0A-9C39-7A56934C9BDD> /System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer
+       0x1960d0000 -        0x19628fffb  libsqlite3.dylib (331.5) <DF0628EE-3BFF-3CB6-BCF7-E6625618FF91> /usr/lib/libsqlite3.dylib
+       0x196328000 -        0x1963e3ffa  com.apple.BaseBoard (567.5 - 567.5) <0C8655CD-61B9-3DBC-8A04-68F397CA3BE3> /System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard
+       0x1963e4000 -        0x19643effe  com.apple.RunningBoardServices (1.0 - 618.100.42) <3E9EDB29-B7E3-3838-A169-C5441DAB0C74> /System/Library/PrivateFrameworks/RunningBoardServices.framework/Versions/A/RunningBoardServices
+       0x19643f000 -        0x1964b0ffb  com.apple.AE (924 - 924) <DAF31FB3-2CE6-3945-9FB6-04E336C08177> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+       0x1964b1000 -        0x1964b9ffc  libdns_services.dylib (1557.140.5.0.1) <DC26611F-A5B8-31D7-915E-64F1A4D82DDC> /usr/lib/libdns_services.dylib
+       0x1964ba000 -        0x1964c2fff  libsystem_symptoms.dylib (1617.140.3) <A1C3A6E3-D6A6-39BE-9632-1A701C61046D> /usr/lib/system/libsystem_symptoms.dylib
+       0x1964c3000 -        0x19666bffa  com.apple.Network (1.0 - 1) <A6B481FF-BFA3-3B92-B07C-419D48405B58> /System/Library/Frameworks/Network.framework/Versions/A/Network
+       0x19666c000 -        0x19669cfff  com.apple.analyticsd (1.0 - 1) <AAA95B85-9B1B-3B4B-8AB1-D936A93AEDFC> /System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics
+       0x19669d000 -        0x19669ffff  libDiagnosticMessagesClient.dylib (112) <896BF26A-BC54-3E19-B907-973986F7B86F> /usr/lib/libDiagnosticMessagesClient.dylib
+       0x1966a0000 -        0x1966f0ffc  com.apple.spotlight.metadata.utilities (1.0 - 2183.23) <03BEDAC7-D94B-3AF8-A9D0-0428FC7E853B> /System/Library/PrivateFrameworks/MetadataUtilities.framework/Versions/A/MetadataUtilities
+       0x1966f1000 -        0x196790ff7  com.apple.Metadata (10.7.0 - 2183.23) <6A46FA78-234D-3E8C-B15A-7C20951E05C3> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+       0x196791000 -        0x196798fff  com.apple.DiskArbitration (2.7 - 2.7) <70A9E44B-B408-3C30-AE45-C485E42B7DC1> /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+       0x196799000 -        0x196b1cff3  com.apple.vImage (8.1 - 555.3) <16CCBC29-083D-38E8-A0C2-06B7B8532F55> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+       0x196b1d000 -        0x196e48fff  com.apple.QuartzCore (1.11 - 964.35) <05D8E758-D3EA-3942-BBE3-668A95692658> /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+       0x196e49000 -        0x196e98ffa  libFontRegistry.dylib (333.2.0.1) <FBF3A4BB-0B06-34A5-B675-D6AAD8FDA835> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+       0x196e99000 -        0x196fd7ffc  com.apple.coreui (2.1 - 738.1) <A0C18B04-1D2A-3863-B80F-BAD0F7B5C65E> /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+       0x1970d4000 -        0x1970dfff9  com.apple.PerformanceAnalysis (1.302.4 - 302.4) <18EE11B3-8411-3311-9F89-AF9D662DD229> /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
+       0x1970e0000 -        0x1970efff9  com.apple.OpenDirectory (12.5 - 233) <D995E4D6-AF55-3E1B-BC5A-E04A759815B6> /System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+       0x1970f0000 -        0x19710ffff  com.apple.CFOpenDirectory (12.5 - 233) <8CA4DC7C-F2DE-3070-9009-6C00B0033C6F> /System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+       0x197110000 -        0x19711cfff  com.apple.CoreServices.FSEvents (1326.140.2 - 1326.140.2) <188F5380-875D-3A54-8A9A-9987C105E633> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents
+       0x19711d000 -        0x197143fff  com.apple.coreservices.SharedFileList (155 - 155) <98E38E5C-440F-3627-A7A2-52C2F082E472> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList
+       0x197144000 -        0x197146fff  libapp_launch_measurement.dylib (16) <C44CB3C0-0B3C-3B52-9A0E-8A4B776DB3A0> /usr/lib/libapp_launch_measurement.dylib
+       0x197147000 -        0x197191ff9  com.apple.CoreAutoLayout (1.0 - 28) <84856816-7152-34D8-8EA3-097C2AD163F9> /System/Library/PrivateFrameworks/CoreAutoLayout.framework/Versions/A/CoreAutoLayout
+       0x197192000 -        0x19727fff7  libxml2.2.dylib (35.14) <6CBC7309-9F09-34BD-9974-98497B3C2A64> /usr/lib/libxml2.2.dylib
+       0x197280000 -        0x1972ddff0  com.apple.CoreVideo (1.8 - 480.1) <F67EA500-406C-3290-9633-3708D455DC9D> /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+       0x1984ae000 -        0x1984ccfff  libsystem_containermanager.dylib (383.120.2) <222D97B6-2951-398B-A954-F49BF4A01707> /usr/lib/system/libsystem_containermanager.dylib
+       0x1984cd000 -        0x1984e0ff5  com.apple.IOSurface (302.14 - 302.14) <DFEC0060-0A35-3C60-898B-686E8326E5BE> /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+       0x1984e1000 -        0x1984eaff9  com.apple.IOAccelerator (462.8 - 462.8) <B68386AD-C587-364E-8B32-6E466D6A5933> /System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
+       0x1984eb000 -        0x19862effe  com.apple.Metal (263.8 - 263.8) <276BBC64-6C99-32C0-8B81-DB44B49345DE> /System/Library/Frameworks/Metal.framework/Versions/A/Metal
+       0x19862f000 -        0x198655ff7  com.apple.audio.caulk (1.0 - 92) <99842553-96FC-378E-B39A-67294FACE1E3> /System/Library/PrivateFrameworks/caulk.framework/Versions/A/caulk
+       0x198656000 -        0x19876bfff  com.apple.CoreMedia (1.0 - 2950.8.2.4.1) <3C6B20F0-8995-35BA-8D66-1A066ACD07E5> /System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia
+       0x19876c000 -        0x1988afff4  libFontParser.dylib (329.5.0.1) <CE97E8C6-A975-3618-A560-12DCCA92F83C> /System/Library/PrivateFrameworks/FontServices.framework/libFontParser.dylib
+       0x1988b0000 -        0x198be3ff8  com.apple.HIToolbox (2.1.1 - 1114.1) <7112F6F2-A77E-39DB-83C8-F627B8A49DF8> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+       0x198be4000 -        0x198bfbfff  com.apple.framework.DFRFoundation (1.0 - 271) <780752CE-E5BB-31AD-8C83-5E43FB46B025> /System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
+       0x198bfc000 -        0x198c00ffb  com.apple.dt.XCTTargetBootstrap (20700) <22165D63-CE61-3AE0-8D08-8235C11CF9C4> /System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/Versions/A/XCTTargetBootstrap
+       0x198c01000 -        0x198c30ffb  com.apple.CoreSVG (1.0 - 175.5.1) <F328EB06-853A-32B4-AFA4-737AAFCE522C> /System/Library/PrivateFrameworks/CoreSVG.framework/Versions/A/CoreSVG
+       0x198c31000 -        0x198e7fff7  com.apple.ImageIO (3.3.0 - 2222.7.4) <8425CCB6-0185-367E-8F22-A7B8356BDABF> /System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
+       0x198e80000 -        0x1991dfff4  com.apple.CoreImage (17.0.0 - 1240.7) <AF75E6A1-0ED1-3821-B783-494C89DE1D46> /System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
+       0x1991e0000 -        0x199253ffb  com.apple.MetalPerformanceShaders.MPSCore (1.0 - 1) <20EC316F-470F-3D04-91B8-1993F8D83984> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSCore.framework/Versions/A/MPSCore
+       0x199254000 -        0x199258fff  libsystem_configuration.dylib (1163.140.3) <BBB0E25D-914B-34CE-A4DA-6869D38C62AB> /usr/lib/system/libsystem_configuration.dylib
+       0x199259000 -        0x19925dfff  libsystem_sandbox.dylib (1657.140.3) <000FB883-945D-310A-B268-E7EF49583E96> /usr/lib/system/libsystem_sandbox.dylib
+       0x19925e000 -        0x19925fffd  com.apple.AggregateDictionary (1.0 - 1) <7EBC6CD5-91FB-34A8-9CD6-43737FF6CD0B> /System/Library/PrivateFrameworks/AggregateDictionary.framework/Versions/A/AggregateDictionary
+       0x199260000 -        0x199263fff  com.apple.AppleSystemInfo (3.1.5 - 3.1.5) <269A3961-2A95-3F2C-B5D3-9224C9EB391C> /System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo
+       0x199264000 -        0x199265fff  liblangid.dylib (136) <7043583F-7223-3889-A008-849561119D4B> /usr/lib/liblangid.dylib
+       0x199266000 -        0x199356ffe  com.apple.CoreNLP (1.0 - 273.2) <98BE9B61-EAD0-36EA-9297-74B2B9D16B55> /System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP
+       0x199357000 -        0x19935effe  com.apple.LinguisticData (1.0 - 399) <44803A85-10C8-365C-96F6-559BF95897C9> /System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData
+       0x19935f000 -        0x19990af83  libBNNS.dylib (403.100.7) <45C23992-2F16-3B59-AC38-847CE366E340> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib
+       0x19990b000 -        0x1999f0f17  libvDSP.dylib (794.100.2) <D73CEF9D-77A3-321F-9769-CD6B9156D95C> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+       0x1999f1000 -        0x199a03ff9  com.apple.CoreEmoji (1.0 - 143) <BD388FD5-8316-38B6-8E05-1F76001307EF> /System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji
+       0x199a04000 -        0x199a0fff3  com.apple.IOMobileFramebuffer (343.0.0 - 343.0.0) <C93A12A8-1CFC-3F90-ACD5-FABBB8B97C60> /System/Library/PrivateFrameworks/IOMobileFramebuffer.framework/Versions/A/IOMobileFramebuffer
+       0x199cd7000 -        0x199cffff2  com.apple.MobileKeyBag (2.0 - 1.0) <6E97F6C2-D689-3060-A78C-0E1240083EF3> /System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
+       0x199d12000 -        0x199da5ff4  com.apple.securityfoundation (6.0 - 55255.100.1) <754F109C-B3FF-3D60-9A57-56E3B25CCEC0> /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+       0x199da6000 -        0x199db0fff  com.apple.coreservices.BackgroundTaskManagement (1.0 - 104) <75A92DC3-B9BC-3600-AEDA-C52C71DE54EF> /System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement
+       0x199dbf000 -        0x199dc1fff  libquarantine.dylib (133.120.2) <1B9B7A97-E823-3D4C-849D-2AD6085BD17F> /usr/lib/system/libquarantine.dylib
+       0x199dc2000 -        0x199dd1fff  libCheckFix.dylib (31) <C5CBCA0C-560B-3125-A4EB-37D814C414A0> /usr/lib/libCheckFix.dylib
+       0x199dd2000 -        0x199de9ffb  libcoretls.dylib (178) <6266ED51-8764-3664-99E6-46C2605A844E> /usr/lib/libcoretls.dylib
+       0x199dea000 -        0x199dfafff  libbsm.0.dylib (73) <686921C3-00EF-3C54-BA08-008877A94A3C> /usr/lib/libbsm.0.dylib
+       0x199dfb000 -        0x199e57ff3  libmecab.dylib (972.11) <F9A17524-76FF-3DA5-80A2-809A54DEF1FE> /usr/lib/libmecab.dylib
+       0x199e58000 -        0x199e5affb  libgermantok.dylib (29) <8738198F-B6CC-3251-89FA-A4C38E6A8659> /usr/lib/libgermantok.dylib
+       0x199e5b000 -        0x199e6fff3  libLinearAlgebra.dylib (1381.100.10) <06B19376-7242-3B58-8A6C-7736153B755C> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib
+       0x199e70000 -        0x19a081ffc  com.apple.MetalPerformanceShaders.MPSNeuralNetwork (1.0 - 1) <7B1ABC16-777E-310A-8F54-A8FBE4921583> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork
+       0x19a082000 -        0x19a0d7ffd  com.apple.MetalPerformanceShaders.MPSRayIntersector (1.0 - 1) <3438075F-A1E5-32B4-921C-24F2731B1E50> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector
+       0x19a2a9000 -        0x19a2d9ff2  com.apple.MetalPerformanceShaders.MPSMatrix (1.0 - 1) <320F7124-C412-3D34-91E2-73613045FCD0> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix
+       0x19a2da000 -        0x19a380ff6  com.apple.MetalPerformanceShaders.MPSNDArray (1.0 - 1) <7A51D4BC-3FAB-37F4-A442-86B9BF51F0BB> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSNDArray.framework/Versions/A/MPSNDArray
+       0x19a381000 -        0x19a40dff2  com.apple.MetalPerformanceShaders.MPSImage (1.0 - 1) <5A945A02-B488-3259-8379-96571B531DA3> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSImage.framework/Versions/A/MPSImage
+       0x19a40e000 -        0x19a41efcf  com.apple.AppleFSCompression (132.100.2 - 1.0) <023465E0-722E-358A-A6F4-63BE3C98B63F> /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+       0x19a41f000 -        0x19a42bff7  libbz2.1.0.dylib (45) <C085A318-1DF3-333F-943F-6D7B333C7A6E> /usr/lib/libbz2.1.0.dylib
+       0x19a42c000 -        0x19a431fff  libsystem_coreservices.dylib (133) <DB41235A-D06B-30C0-ACB8-7BE56CF9ECB3> /usr/lib/system/libsystem_coreservices.dylib
+       0x19a432000 -        0x19a464ffb  com.apple.CoreServices.OSServices (1141.1 - 1141.1) <F2C69333-D6C3-32A9-8B59-B18E0823A95D> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+       0x19a685000 -        0x19a696fff  libz.1.dylib (77.120.1) <1448C264-EB72-36E5-983D-30D8CDCADD2B> /usr/lib/libz.1.dylib
+       0x19a697000 -        0x19a6cdffb  libsystem_m.dylib (3204.80.2) <EDE5D6BA-AB8E-3AF9-AB1F-8A017E9E6892> /usr/lib/system/libsystem_m.dylib
+       0x19a6ce000 -        0x19a6cefff  libcharset.1.dylib (61) <93FAF052-3734-3999-9B3A-26287995632B> /usr/lib/libcharset.1.dylib
+       0x19a6cf000 -        0x19a6d7ff3  libmacho.dylib (994) <144D66CC-F351-3825-B613-96EB6C9B0841> /usr/lib/system/libmacho.dylib
+       0x19a6d8000 -        0x19a6f3fff  libkxld.dylib (8020.141.5) <5A18A9C4-9C10-322C-A7DD-13E17B20F063> /usr/lib/system/libkxld.dylib
+       0x19a6f4000 -        0x19a700ffb  libcommonCrypto.dylib (60191.100.1) <70842454-586B-32CC-95D8-3E9A81BDB867> /usr/lib/system/libcommonCrypto.dylib
+       0x19a701000 -        0x19a70bfff  libunwind.dylib (202.2) <177733D7-C461-3649-8A1A-EB4D40AAD8A0> /usr/lib/system/libunwind.dylib
+       0x19a70c000 -        0x19a713ffb  liboah.dylib (254.25) <DC7F8F91-5321-3460-87A2-BF8BD8231371> /usr/lib/liboah.dylib
+       0x19a714000 -        0x19a71cff7  libcopyfile.dylib (180.100.3) <BB0FAE52-FAC9-3E73-8E3B-8424B11F654B> /usr/lib/system/libcopyfile.dylib
+       0x19a71d000 -        0x19a720ffb  libcompiler_rt.dylib (103.1) <A24BDAAB-F31F-3D2B-AC27-CAD2E2AD7AF5> /usr/lib/system/libcompiler_rt.dylib
+       0x19a721000 -        0x19a725fff  libsystem_collections.dylib (1507.100.9) <7C0C9644-BA46-3ADD-9D79-5EFC2EF61D47> /usr/lib/system/libsystem_collections.dylib
+       0x19a726000 -        0x19a728ffb  libsystem_secinit.dylib (107.100.5) <061CDE17-29C9-37A3-B7A7-9FE4D8309503> /usr/lib/system/libsystem_secinit.dylib
+       0x19a729000 -        0x19a72bfff  libremovefile.dylib (60) <FEBE7E28-3C3D-3D71-BE8B-B49E38FC8AED> /usr/lib/system/libremovefile.dylib
+       0x19a72c000 -        0x19a72cfff  libkeymgr.dylib (31) <4150E993-37F3-3750-8AC5-B5B4FA660828> /usr/lib/system/libkeymgr.dylib
+       0x19a72d000 -        0x19a735fff  libsystem_dnssd.dylib (1557.140.5.0.1) <7376ADE6-8C0D-3146-8A1E-27A8662C836B> /usr/lib/system/libsystem_dnssd.dylib
+       0x19a736000 -        0x19a73bff7  libcache.dylib (85) <B1DCE8D6-994D-3456-A02F-A20F88C1DEE2> /usr/lib/system/libcache.dylib
+       0x19a73c000 -        0x19a73dfff  libSystem.B.dylib (1311.120.1) <A4F95D9E-E1AD-3278-80D3-0C48B3CBFE47> /usr/lib/libSystem.B.dylib
+       0x19a73e000 -        0x19a741ffb  libfakelink.dylib (4) <708541DF-A4DE-3F14-8A51-1BE58F489A59> /usr/lib/libfakelink.dylib
+       0x19a742000 -        0x19a742ffb  com.apple.SoftLinking (1.0 - 42) <4BC51116-BE62-32CA-AFD7-F2CDE788234D> /System/Library/PrivateFrameworks/SoftLinking.framework/Versions/A/SoftLinking
+       0x19a743000 -        0x19a77ffff  libpcap.A.dylib (110) <C38BCF40-6638-3762-B6AB-3FC104DF88F4> /usr/lib/libpcap.A.dylib
+       0x19a780000 -        0x19a871ffb  libiconv.2.dylib (61) <0D27F046-16F2-30E1-BE39-8E518E72287A> /usr/lib/libiconv.2.dylib
+       0x19a872000 -        0x19a883ff3  libcmph.dylib (8) <8094218E-3135-33DB-89D1-140F1FE39DC8> /usr/lib/libcmph.dylib
+       0x19a884000 -        0x19a909ffb  libarchive.2.dylib (103) <E089F6C2-717B-3F9F-88CF-13165756EF40> /usr/lib/libarchive.2.dylib
+       0x19a90a000 -        0x19a981fff  com.apple.SearchKit (1.4.1 - 1.4.1) <4FDACCFB-EC5A-3EA1-9243-7FF31757A577> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+       0x19a982000 -        0x19a983ff3  libThaiTokenizer.dylib (10) <F71392B9-B041-3586-8612-553544A6171B> /usr/lib/libThaiTokenizer.dylib
+       0x19a984000 -        0x19a9a8ff7  com.apple.applesauce (1.0 - 16.38) <EF30629A-D645-3E69-BA37-E578C216704B> /System/Library/PrivateFrameworks/AppleSauce.framework/Versions/A/AppleSauce
+       0x19a9a9000 -        0x19a9c0ff7  libapple_nghttp2.dylib (2) <C878B7F9-8F18-383A-9438-20C13717259A> /usr/lib/libapple_nghttp2.dylib
+       0x19a9c1000 -        0x19a9d3ff7  libSparseBLAS.dylib (1381.100.10) <935193A9-627F-3EDF-BC95-33DF2BDE2776> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib
+       0x19a9d4000 -        0x19a9d5ff9  com.apple.MetalPerformanceShaders.MetalPerformanceShaders (1.0 - 1) <70D1FA37-8775-3F2B-A021-A341BFF6DA53> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders
+       0x19a9d6000 -        0x19a9dafff  libpam.2.dylib (29) <2CE522AC-62FE-313F-A51F-697C5243CEF8> /usr/lib/libpam.2.dylib
+       0x19a9db000 -        0x19aaa6fd3  libcompression.dylib (125.120.2) <001B1D20-6FED-3112-86DF-6EE472831E02> /usr/lib/libcompression.dylib
+       0x19aaa7000 -        0x19aaabffb  libQuadrature.dylib (7) <736CA56B-E9A2-381D-9E68-678BD3FFA7EC> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib
+       0x19aaac000 -        0x19af70ff7  libLAPACK.dylib (1381.100.10) <ECC06AD9-1E4A-3D50-93CA-C18F30383F7B> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+       0x19af71000 -        0x19afc7ff6  com.apple.DictionaryServices (1.2 - 350) <379B89E2-07F3-3110-95E9-91CBA94FBF30> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+       0x19afc8000 -        0x19afe0ff3  liblzma.5.dylib (16) <CF152EC2-A568-3BC5-A1A3-C8C619FC9762> /usr/lib/liblzma.5.dylib
+       0x19afe1000 -        0x19afe2ffb  libcoretls_cfhelpers.dylib (178) <7A866D6E-3E68-3C78-9FEA-6E7E04ED10D5> /usr/lib/libcoretls_cfhelpers.dylib
+       0x19afe3000 -        0x19b049ff3  com.apple.APFS (1934.141.2 - 1934.141.2) <B140D5F6-C342-38E3-97B9-C22CC3762BBA> /System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
+       0x19b04a000 -        0x19b058ffb  libxar.1.dylib (487.100.1) <3E56A69C-F1C0-3650-8F75-D2F7DFC78424> /usr/lib/libxar.1.dylib
+       0x19b059000 -        0x19b05cff7  libutil.dylib (62) <D7E1F851-F15D-3257-B2E1-6F2522059C28> /usr/lib/libutil.dylib
+       0x19b05d000 -        0x19b086ff7  libxslt.1.dylib (18.5) <1DE37532-F532-30C5-84EF-1E1ECB10473C> /usr/lib/libxslt.1.dylib
+       0x19b087000 -        0x19b08efff  libChineseTokenizer.dylib (40) <A661AC5C-D0A5-37E0-8FF3-BC916A4F1CB1> /usr/lib/libChineseTokenizer.dylib
+       0x19b08f000 -        0x19b102feb  libvMisc.dylib (794.100.2) <1EAD25EA-27E5-3C41-850E-7FEB21DD00C4> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+       0x19b103000 -        0x19b193fd0  libate.dylib (3.0.6) <903CF075-8D05-340E-B0DD-DF9FBF218129> /usr/lib/libate.dylib
+       0x19b194000 -        0x19b19cfff  libIOReport.dylib (76) <7AC69C12-8286-3032-829D-894DB373551B> /usr/lib/libIOReport.dylib
+       0x19b363000 -        0x19b3aeffb  com.apple.AppleVAFramework (6.1.3 - 6.1.3) <B42FD5DA-9F9E-36C8-8547-AE929DDAD130> /System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
+       0x19b3af000 -        0x19b3c9ffb  libexpat.1.dylib (28) <357C0572-1C34-334C-BCDD-6D5BDF37F8E4> /usr/lib/libexpat.1.dylib
+       0x19b3ca000 -        0x19b3d3fff  libheimdal-asn1.dylib (634.100.7) <4EF3EA23-C021-3CFB-99DF-68E91EA5BEC4> /usr/lib/libheimdal-asn1.dylib
+       0x19b3d4000 -        0x19b3e9ffa  com.apple.IconFoundation (493 - 493) <AA0B5A03-EA3D-3E7E-BC0F-0B6F7B92825B> /System/Library/PrivateFrameworks/IconFoundation.framework/Versions/A/IconFoundation
+       0x19b3ea000 -        0x19b45bff5  com.apple.IconServices (493 - 493) <0220881A-77F2-3F1F-AE6F-AE2624EA7479> /System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
+       0x19b45c000 -        0x19b4cfff5  com.apple.MediaExperience (1.0 - 1) <21E8CE55-3297-3A71-9AFE-A53E50FFC213> /System/Library/PrivateFrameworks/MediaExperience.framework/Versions/A/MediaExperience
+       0x19b4fb000 -        0x19b508ffc  com.apple.GraphVisualizer (1.0 - 100.1) <29F3AB53-BFE7-3141-86F5-C6ACB6FA3F3B> /System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer
+       0x19b509000 -        0x19b91bffc  com.apple.vision.FaceCore (4.3.2 - 4.3.2) <64D49C36-009F-3121-83DA-71D97E544265> /System/Library/PrivateFrameworks/FaceCore.framework/Versions/A/FaceCore
+       0x19b91c000 -        0x19b95fff4  com.apple.OTSVG (1.0 - 710.5.0.1) <C1F85025-9F30-3162-A628-50D33B9BE779> /System/Library/PrivateFrameworks/OTSVG.framework/Versions/A/OTSVG
+       0x19b960000 -        0x19b968fff  com.apple.xpc.AppServerSupport (1.0 - 2236.140.2) <0D5056F3-7A91-3B51-9B76-7EBE6DB8E88F> /System/Library/PrivateFrameworks/AppServerSupport.framework/Versions/A/AppServerSupport
+       0x19b969000 -        0x19b972ffb  libhvf.dylib (1.0 - 329.5.0.1) <01BB5303-2920-37B0-80BA-674644F674F9> /System/Library/PrivateFrameworks/FontServices.framework/libhvf.dylib
+       0x19b973000 -        0x19b977fff  libspindump.dylib (310.1) <C4E84DC0-DF43-3C4E-B7E3-7AD0B2926978> /usr/lib/libspindump.dylib
+       0x19b978000 -        0x19ba3affe  com.apple.Heimdal (4.0 - 2.0) <70C9C358-4A14-3E1D-80D6-D3742232904D> /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
+       0x19bc48000 -        0x19bc8cfff  com.apple.AppleJPEG (1.0 - 1) <536DBD3F-FABB-3D36-98B7-E8A38077F520> /System/Library/PrivateFrameworks/AppleJPEG.framework/Versions/A/AppleJPEG
+       0x19bc8d000 -        0x19bd78fff  libJP2.dylib (2222.7.4) <57F926D1-21EF-31D0-BF0B-B4EBCD0A8008> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+       0x19bd79000 -        0x19bd7cfff  com.apple.WatchdogClient.framework (1.0 - 127.140.2) <B20746EA-C57B-39CA-B7A9-8FADB96BAEBC> /System/Library/PrivateFrameworks/WatchdogClient.framework/Versions/A/WatchdogClient
+       0x19bd7d000 -        0x19bdb7ffd  com.apple.MultitouchSupport.framework (5460.1 - 5460.1) <1646E48C-8D45-3B6C-A571-626EE31B76C5> /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+       0x19bdb8000 -        0x19c222ff9  com.apple.VideoToolbox (1.0 - 2950.8.2.4.1) <F77D6293-AC37-3A44-A8C3-E066E07B805A> /System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
+       0x19c223000 -        0x19c254fe3  libAudioToolboxUtility.dylib (1245.89) <1CC3FC06-0D65-3BAB-81AA-69AB88439382> /usr/lib/libAudioToolboxUtility.dylib
+       0x19c255000 -        0x19c276ff3  libPng.dylib (2222.7.4) <78EC0B20-82EF-37DF-8496-96DC20512DBA> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+       0x19c277000 -        0x19c2d3fff  libTIFF.dylib (2222.7.4) <8A34D9A7-D1B2-3235-B38E-38ABD8C5DBD7> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+       0x19c2d4000 -        0x19c2f3ffb  com.apple.IOPresentment (62 - 37) <8C19E360-B65E-37E9-B8E5-28038F3FA583> /System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment
+       0x19c2f4000 -        0x19c2f8ffb  com.apple.GPUWrangler (6.5.7 - 6.5.7) <5B120CFC-8969-3144-9C51-69341B7677A7> /System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler
+       0x19c2f9000 -        0x19c2fbffb  libRadiance.dylib (2222.7.4) <6DCC1163-58A0-369E-853C-73390DF65092> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+       0x19c2fc000 -        0x19c301ffb  com.apple.DSExternalDisplay (3.1 - 380) <369E0ADF-E4C0-32E3-B911-90372CEAD3DF> /System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay
+       0x19c302000 -        0x19c32cfff  libJPEG.dylib (2222.7.4) <07D0D6A6-CD36-3F3E-B6B0-8DA27686E057> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+       0x19c32d000 -        0x19c35cff7  com.apple.ATSUI (1.0 - 1) <80686E36-32AB-36F1-B40B-037F5334C9A8> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATSUI.framework/Versions/A/ATSUI
+       0x19c35d000 -        0x19c361ff3  libGIF.dylib (2222.7.4) <EBEDF480-32CC-3228-A3A1-FF3B2D845FC9> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+       0x19c362000 -        0x19c36bfff  com.apple.CMCaptureCore (1.0 - 191.5.2) <DA88F225-76F5-398D-8EB8-4608CB8D3F61> /System/Library/PrivateFrameworks/CMCaptureCore.framework/Versions/A/CMCaptureCore
+       0x19c36c000 -        0x19c3d7ffb  com.apple.print.framework.PrintCore (17.1 - 544.1) <B9C93B03-E31C-374D-8A0E-3C4A12677DCF> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+       0x19c3d8000 -        0x19c47bff2  com.apple.TextureIO (3.10.10 - 3.10.10) <4F930ABE-3152-3FA8-B1C7-A39051CC0D90> /System/Library/PrivateFrameworks/TextureIO.framework/Versions/A/TextureIO
+       0x19c47c000 -        0x19c487fff  com.apple.InternationalSupport (1.0 - 69.1) <309E0FDA-C193-387F-99CE-E5E597625AE6> /System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport
+       0x19c488000 -        0x19c504ff9  com.apple.datadetectorscore (8.0 - 697.2) <389DBBB8-BDF8-388A-997E-0E0A4584B064> /System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
+       0x19c505000 -        0x19c572ffb  com.apple.UserActivity (521.3 - 521.3) <BA36B90D-07F7-3B46-A4E9-66DB2BF93F71> /System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
+       0x19d2f0000 -        0x19d329ffe  libSessionUtility.dylib (128.63) <E9C38C45-8259-39BC-A33F-82D5D5AA2CF9> /System/Library/PrivateFrameworks/AudioSession.framework/libSessionUtility.dylib
+       0x19d32a000 -        0x19d46affd  com.apple.audio.toolbox.AudioToolbox (1.14 - 1.14) <300DB1B1-6DD9-3494-B314-36E68B4F7553> /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+       0x19d46b000 -        0x19d4dcff7  com.apple.audio.AudioSession (1.0 - 128.63) <4ECE7C64-9B06-3783-B13F-FE4A535ACBE2> /System/Library/PrivateFrameworks/AudioSession.framework/Versions/A/AudioSession
+       0x19d4dd000 -        0x19d4f0ffc  libAudioStatistics.dylib (69.68) <1C5B4D7F-123F-31F0-A467-89D06AB33375> /usr/lib/libAudioStatistics.dylib
+       0x19d4f1000 -        0x19d504ff8  com.apple.speech.synthesis.framework (9.0.88.6 - 9.0.88.6) <3FC4AB98-32B5-3EC0-993D-F6F4CE0BD44B> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+       0x19d505000 -        0x19d574ff3  com.apple.ApplicationServices.ATS (377 - 533.5.0.1) <802DC06F-8322-3D70-BC4A-31209D122D6B> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+       0x19d575000 -        0x19d58dffb  libresolv.9.dylib (68.140.2) <E57D1C47-1CA3-3D21-B8D0-F9B84E33077A> /usr/lib/libresolv.9.dylib
+       0x19d749000 -        0x19d828ffb  libSMC.dylib (21) <EBF53175-1221-3530-AB41-B96BEC31E1E5> /usr/lib/libSMC.dylib
+       0x19d829000 -        0x19d886ff3  libcups.2.dylib (499.4) <405FE05B-AE9C-38D0-A22A-3E1AECE8B898> /usr/lib/libcups.2.dylib
+       0x19d894000 -        0x19d89bfff  com.apple.ColorSyncLegacy (4.13.0 - 1) <A87F7D16-C287-3A20-8981-84C90212C032> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy
+       0x19d89c000 -        0x19d8a7fff  com.apple.QD (4.0 - 416) <4B0ED88F-447E-3707-B14D-79D9C204C846> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+       0x19d8a8000 -        0x19dbe7ff6  com.apple.audio.AudioResourceArbitration (1.0 - 1) <29DE0D50-8151-343F-B433-D6650737BFD1> /System/Library/PrivateFrameworks/AudioResourceArbitration.framework/Versions/A/AudioResourceArbitration
+       0x19dbe8000 -        0x19dbf4ff0  com.apple.perfdata (1.0 - 82) <A7C2144C-1854-3CFC-8FB1-4A852536FCC6> /System/Library/PrivateFrameworks/perfdata.framework/Versions/A/perfdata
+       0x19dbf5000 -        0x19dc02ffc  libperfcheck.dylib (42) <E2860B01-87D0-3061-9073-D6D8C0E6E727> /usr/lib/libperfcheck.dylib
+       0x19dc03000 -        0x19dc13ff7  com.apple.Kerberos (3.0 - 1) <4EA028C2-9968-3E30-A46A-528971672D01> /System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+       0x19dc14000 -        0x19dc63ffb  com.apple.GSS (4.0 - 2.0) <3447BD21-B5B1-323D-B16B-F15950313C20> /System/Library/Frameworks/GSS.framework/Versions/A/GSS
+       0x19dc64000 -        0x19dc74fff  com.apple.CommonAuth (4.0 - 2.0) <26F09948-5AF0-3D69-A8D6-274D4C82BF39> /System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
+       0x1a078b000 -        0x1a07b6ffd  com.apple.RemoteViewServices (2.0 - 167) <BF66FF95-66B2-300A-B149-8DF4F5AD1936> /System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
+       0x1a07b7000 -        0x1a07cafff  com.apple.SpeechRecognitionCore (6.2.26.9 - 6.2.26.9) <4BFBA0FB-3B23-3179-98B0-5EFAB73A63B4> /System/Library/PrivateFrameworks/SpeechRecognitionCore.framework/Versions/A/SpeechRecognitionCore
+       0x1a07cb000 -        0x1a07d2fff  com.apple.speech.recognition.framework (6.0.3 - 6.0.3) <61F10919-8769-3D9C-B1DB-233EDFFDC576> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+       0x1a0a91000 -        0x1a0a91fff  libsystem_product_info_filter.dylib (10) <EC3B9148-9C03-38B9-9005-98FF032B41E8> /usr/lib/system/libsystem_product_info_filter.dylib
+       0x1a0b91000 -        0x1a0b91fff  com.apple.Accelerate.vecLib (3.11 - vecLib 3.11) <BF879D92-711C-3F22-8E84-9B101AB8EAAB> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+       0x1a0bba000 -        0x1a0bbafff  com.apple.CoreServices (1141.1 - 1141.1) <2C068AFA-A605-3384-A8E8-4F4529ACCA0C> /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+       0x1a0e57000 -        0x1a0e57fff  com.apple.Accelerate (1.11 - Accelerate 1.11) <C6AD3D99-5419-3D69-BD95-DF08B0E26FC4> /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+       0x1a1a6e000 -        0x1a1a94ffd  com.apple.PowerLog (1.0 - 1) <F4212115-70C1-369B-9413-627CF050631D> /System/Library/PrivateFrameworks/PowerLog.framework/Versions/A/PowerLog
+       0x1a29ca000 -        0x1a2a0cffc  com.apple.DebugSymbols (195.1 - 195.1) <FE285E8B-5D0E-3443-B7EE-904087CB7F42> /System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
+       0x1a2a0d000 -        0x1a2aebff7  com.apple.CoreSymbolication (13.3 - 64552.31) <F95FDB21-9829-3EDF-8A1A-4086454CFDC0> /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
+       0x1a435c000 -        0x1a435cfff  com.apple.ApplicationServices (48 - 50) <5FCC8A70-E4BE-3A56-A870-F1ECA3C4935C> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+       0x1a46ec000 -        0x1a46ecfff  libHeimdalProxy.dylib (79) <AC40E53C-8B29-3610-BDA6-846E89449931> /System/Library/Frameworks/Kerberos.framework/Versions/A/Libraries/libHeimdalProxy.dylib
+       0x1a54b6000 -        0x1a54c5ff8  com.apple.ASEProcessing (1.29.1 - 1.29.1) <75EA5775-C6AB-3BC8-9B99-2063C4B428D6> /System/Library/PrivateFrameworks/ASEProcessing.framework/Versions/A/ASEProcessing
+       0x1a649d000 -        0x1a650eff1  com.apple.audio.midi.CoreMIDI (2.0 - 88) <25F41F43-D74F-31B9-9F6B-6F03A3661072> /System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI
+       0x1a6c96000 -        0x1a6c99fff  com.apple.IOSurfaceAccelerator (1.0.0 - 1.0.0) <9B61F69C-D027-3345-ABFC-B8C0D79BEBFF> /System/Library/PrivateFrameworks/IOSurfaceAccelerator.framework/Versions/A/IOSurfaceAccelerator
+       0x1ab65e000 -        0x1ab669ffe  com.apple.OSAServicesClient (1.0 - 1) <A8F3E824-C012-3B34-8350-73A5FE66FE4E> /System/Library/PrivateFrameworks/OSAServicesClient.framework/Versions/A/OSAServicesClient
+       0x1af4fb000 -        0x1af51aff8  com.apple.private.SystemPolicy (1.0 - 1) <82626BD3-0C13-3E67-9D10-F1D0D733E4A2> /System/Library/PrivateFrameworks/SystemPolicy.framework/Versions/A/SystemPolicy
+       0x1b001a000 -        0x1b0035ff8  libmis.dylib (336.120.2) <641B81F9-7D57-3369-ABEF-4DBCB0635F44> /usr/lib/libmis.dylib
+       0x1b2ea8000 -        0x1b2f58ffb  com.apple.TextInput (1.0 - 1.0) <BFFFE0AE-2D77-3563-BB3D-35B2BE3BA230> /System/Library/PrivateFrameworks/TextInput.framework/Versions/A/TextInput
+       0x1b3dca000 -        0x1b3dfaff3  libncurses.5.4.dylib (57) <DB239759-9777-3B3F-9FA4-DB8C1D136372> /usr/lib/libncurses.5.4.dylib
+       0x1f1346000 -        0x1f134cff3  libCoreFSCache.dylib (261) <2B6159F7-477B-30A3-84A6-FC744D0F7DA2> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
+       0x1f134d000 -        0x1f1352fff  libCoreVMClient.dylib (261) <16D102DE-CF57-3998-B234-27E970D841C6> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+       0x1f1353000 -        0x1f1363ff7  com.apple.opengl (19.5.1 - 19.5.1) <F538E7DD-90FA-3EA1-AE05-3DB879CA7C6A> /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+       0x1f1364000 -        0x1f1366fff  libCVMSPluginSupport.dylib (19.5.1) <1FC087E9-B78D-36CB-80C2-C2A197FDE606> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+       0x1f1367000 -        0x1f136fff3  libGFXShared.dylib (19.5.1) <6C1D76A5-3693-3C6F-ADB6-550CE227D850> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+       0x1f1370000 -        0x1f13a7ff3  libGLImage.dylib (19.5.1) <F5E2B104-1AAC-39E9-85EE-349CB9EDD415> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+       0x1f13a8000 -        0x1f13e5ff7  libGLU.dylib (19.5.1) <D7557418-28DB-330E-9128-5DF79A551553> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+       0x1f1554000 -        0x1f155dfff  libGL.dylib (19.5.1) <928F75D5-5F5F-3D62-9A93-46CA78A47AF9> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+       0x1f16f5000 -        0x1f1763ff3  com.apple.opencl (4.7 - 4.7) <C42C0BCD-0092-394B-874D-FEB258D20F2F> /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
+       0x1f3e4f000 -        0x1f3e62ff2  com.apple.MPSFunctions (1.0 - 1) <46951A95-C871-30DA-B0B2-88C4466EEE2B> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSFunctions.framework/Versions/A/MPSFunctions
+       0x1fc127000 -        0x1fc127ffb  com.apple.FontServices (1.0 - 1) <2837D6FC-311E-3F84-ABAA-E5747895B1FF> /System/Library/PrivateFrameworks/FontServices.framework/Versions/A/FontServices
+       0x1fc128000 -        0x1fc1b3ff9  libXTFontStaticRegistryData.dylib (226.5.0.1) <7FCA9813-ED4E-3AB8-B21E-482C86BEED47> /System/Library/PrivateFrameworks/FontServices.framework/libXTFontStaticRegistryData.dylib
+       0x1fc210000 -        0x1fc213fff  libGPUCompilerUtils.dylib (31001.525) <93CDCCD5-3853-3BDE-BC23-0B9DEAB14904> /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/31001/Libraries/libGPUCompilerUtils.dylib
+       0x20f73d000 -        0x20f744ffb  libCoreEntitlements.dylib (20.120.1) <0FFA7973-28E3-3FFF-8D29-C0D45C1AC3A8> /usr/lib/libCoreEntitlements.dylib
+Sample analysis of process 5918 written to file /dev/stdout
