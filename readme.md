@@ -1,7 +1,9 @@
 # Simulazione Monte Carlo e ricostruzione di vertici primari in un tracciatore
 ### Tecniche di analisi numerica e simulazione - AA 2022-2023
 
-Studenti: Enrica Bergalla, Valerio Pagliarino
+Authors: Enrica Bergalla, Valerio Pagliarino
+
+[RELAZIONE TECNICA E DOCUMENTAZIONE](./TANS_Report_Bergalla_Pagliarino.pdf)
 
 <b> Istruzioni rapide per testare il programma, per informazioni più dettagliate fare riferimento alla relazione tecnica </b>
 
